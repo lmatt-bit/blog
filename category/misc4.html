@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>misc - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="lmatt" />
+    <meta name="keywords" content="misc" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="do not know"/>
+        <meta property="og:url" content="http://lmatt-bit.github.io/blog"/>
+        <meta property="og:description" content="do not know"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://lmatt-bit.github.io/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://lmatt-bit.github.io/blog/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lmatt-bit.github.io/blog/" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html">
+                             关于我(About Me)
+                          </a></li>
+                        <li class="active">
+                            <a href="http://lmatt-bit.github.io/blog/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://lmatt-bit.github.io/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/subprocess(python).html">subprocess(python)</a></h2>
+                <div class="summary"><p>subprocess
+是python在2.4版本之后引入的用于subprocess管理的module。subprocess中有一个重要的类Popen和一个重要的方法call。下面对Popen和call进行相关说明。</p>
+<p>Popen用于新建一个subprocess，下面是它的构造函数。</p>
+<p><em>class</em> <code>subprocess.Popen</code><big>(</big><em>args</em>, <em>bufsize=0</em>,
+<em>executable=None</em>, <em>stdin=None</em>, <em>stdout=None</em>, <em>stderr=None</em>,
+<em>preexec_fn=None</em>, <em>close_fds=False</em>, <em>shell=False</em>, <em>cwd=None</em>,
+<em>env=None</em>, <em>universal_newlines=False</em>, <em>startupinfo=None</em>,
+<em>creationflags=0</em><big>)</big></p>
+<p>其中：</p>
+<p>args是运行进程的命令行（与shell中输入的命令行一样）；</p>
+<p><em>bufsize</em>, if given, has the same meaning as the corresponding ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/subprocess(python).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html">pyqt的安装(linux下)</a></h2>
+                <div class="summary"><p>nokia在收购qt之后，让qt出现了lgpl的licence，这一举动获得了不少赞许。nokia也希望pyqt能有lgpl的licence，只可惜与Riverbank谈判不拢，pyqt依旧是gpl的licence。迫不得已，nokia只好自己搞个类似pyqt的项目（pyside）。这个pyside项目的协议是lgpl的，目前还不够完善，但相信以后的前景是不错的。</p>
+<p>目前pyqt仍然是主流，所以下面说一下pyqt的安装。由于windows有安装的exe，几乎不用配置就可以安装上，这里就不做说明。</p>
+<p>要在linux下安装pyqt，首先需要安装Riverbank的SIP。在SIP安装前需要确保系统上安装了python-devel（python
+开发的一些文件，在fedora下可以直接yum安装）。</p>
+<p>安装SIP过程：</p>
+<p><span style="color: #3366ff;">1.下载SIP，解压。</span></p>
+<p><span style="color: #3366ff;">2.从命令行中进入SIP的目录，输入python
+configure.py</span></p>
+<p><span
+style="color: #3366ff;">3.在上一步成功之后，输入make（需要确保有make，gcc等一系列编译工具）</span></p>
+<p><span style="color: #3366ff;">4.在上一步成功之后，输入make
+install。到此sip安装完成。</span></p>
+<p>接着是pyqt的安装：</p>
+<p><span style="color: #3366ff;">1.下载pyqt，解压 ...</span></p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/vimrcpeizhichixugengxin.html">vimrc配置（持续更新）</a></h2>
+                <div class="summary"><p>文章转载自http://jmcpherson.org/vimrc.html</p>
+<p>.vimrc and customization</p>
+<p>vim is extremely customizable. It will read the file .vimrc in your home
+directory before it starts. This file can contain settings and even
+scripts. The below settings are ones I've found helpful -- give them a
+try!</p>
+<p>set nocompatible</p>
+<p>This setting ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/vimrcpeizhichixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html">libvlc与pyqt搭配使用</a></h2>
+                <div class="summary"><p>libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python,
+java,
+c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python
+binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/
+从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import
+vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html">编译libtorrent rasterbar(linux下)</a></h2>
+                <div class="summary"><p>六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent,
+k**(名字忘记了，和KDE有些关系),
+transmission(在linux上貌似没法下载，仅支持mac
+os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent
+rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent
+rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\</p>
+<h2>1.编译boost</h2>
+<p>这里我使用了boost.build来编译生成。</p>
+<p>a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh</p>
+<p>b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/gccbianyichixugengxin.html">gcc编译（持续更新）</a></h2>
+                <div class="summary"><p>gcc -I[path] 后接include目录</p>
+<p>gcc -L[path] 后接library目录,一般会与-l(L小写)[library
+name（如libabc.a,名称就为abc）]连用。</p>
+<p>gcc -static 静态链接。可能会产生"cannot
+find -lm"错误，这是由于缺少glibc-static的原因（fedora系统上就可能存在这个问题）。安装上glibc-static后，/usr/lib/目录下会出现libm.a这个文件。</p>
+<p>gcc -o[out name] 接输出文件的名称</p>
+<p>gcc -w                inhibit all warning message
+(不允许出现任何warning消息) ［东哥］</p>
+<p>gcc -Wall            打开部分的warning的flag,这部分flag所对应的
+warning可能是用户避免或觉得有问题的。</p>
+<p>gcc ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/gccbianyichixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/Template.html">Template</a></h2>
+                <div class="summary"><p>文章内容参考了<a href="http://www.cplusplus.com/doc/tutorial/templates/">http://www.cplusplus.com/doc/tutorial/templates/</a></p>
+<p>个人觉得template的使用，使得
+c++更加oo了。下面就记录下template的几种用法。\</p>
+<h1><strong>Function template</strong></h1>
+<p>函数template的声明和定义一般使用如下的方法。</p>
+<p>[codesyntax lang="cpp" title="function template"]</p>
+<div class="highlight"><pre><span class="o">//</span><span class="nt">declaration</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span><span class="o">,</span> <span class="nt">T</span><span class="o">);</span>
+
+<span class="o">//</span><span class="nt">definition</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span> <span class="nt">lfs</span><span class="o">,</span> <span class="nt">T</span> <span class="nt">rfs</span><span class="o">)</span><span class="p">{</span>
+   <span class="n">return</span> <span class="p">(</span><span class="n">lfs</span> <span class="o">&gt;</span> <span class="n">rfs</span><span class="p">)</span><span class="o">?</span><span class="n">lfs</span><span class="o">:</span><span class="n">rfs</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>函数的使用如下。\
+中的内容为类型名称，在某些情况（编译器能够理解 ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/Template.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/#pragmazhuanzaizibaidubaike).html">#pragma（转载自百度百科)</a></h2>
+                <div class="summary"><h1><a href="http://baike.baidu.com/view/1451188.htm">#pragma</a></h1>
+<p>#pragma 预处理指令详解\
+在所有的预处理指令中，#Pragma
+指令可能是最复杂的了，它的作用是设定编译器的状态或者是指示编译器完成一些特定的动作。#pragma指令对每个编译器给出了一个方法,在保持与C和
+C++语言完全兼容的情况下,给出主机或操作系统专有的特征。依据定义,编译指示是机器或操作系统专有的,且对于每个编译器都是不同的。\
+其格式一般为: #Pragma Para\
+其中Para 为参数，下面来看一些常用的参数。\
+(1)message 参数。 Message
+参数能够在编译信息输出窗口中输出相应的信息，这对于源代码信息的控制是非常重要的。其使用方法为：\
+#Pragma message(“消息文本”)\
+当编译器遇到这条指令时就在编译输出窗口中将消息文本打印出来。\
+当我们在程序中定义了许多宏来控制源代码版本的时候，我们自己有可能都会忘记有没有正确的设置这些宏，此时我们可以用这条指令在编译的时候就进行检查。假设我们希望判断自己有没有在源代码的什么地方定义了_X86这个宏可以用下面的方法\
+#ifdef _X86\
+#Pragma message(“_X86 macro activated!”)\
+#endif\
+当我们定义了_X86这个宏以后，应用程序在编译时就会在编译输出窗口里显示“_X86
+macro
+activated!”。我们就不会因为不记得自己定义的一些特定的宏而抓耳挠腮了 ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/#pragmazhuanzaizibaidubaike).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html">apache 配置http代理服务器</a></h2>
+                <div class="summary"><p>以opensuse11.2为例，在/etc/apache2/sysconfig.d/目录中的loadmodule.conf中添加如下内容。分别是载入cache,disk_cache,proxy和proxy_http模块。其中cache和disk_cache用于缓存信息，proxy和proxy_http（用于支持http）用于启用代理。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>LoadModule cache_module /usr/lib/apache2-prefork/mod_cache.so
+LoadModule disk_cache_module /usr/lib/apache2-prefork/mod_disk_cache.so
+LoadModule proxy_module /usr/lib/apache2-prefork/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>然后在/etc ...</p>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html">c++ const的一些知识</a></h2>
+                <div class="summary"><p>const 指针</p>
+<p>const在*左边，是指指针所指的对象是不可以改变的；在*右边，则是指指针不能指向另外一个对象。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>int b = 10;
+const int *a = &amp;b;//or int const *a = &amp;b;
+*a = 11;//error
+
+int d = 20;
+int * const c = &amp;b;
+c = &amp;d;//error
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>const 引用</p>
+<p>const只能在&amp;左边，指所引用的对象不能被改变。如</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>int a = 10;
+const ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="http://lmatt-bit.github.io/blog/category/misc3.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="http://lmatt-bit.github.io/blog/category/misc.html">1</a></li>
+                    <li class=""><a
+                            href="http://lmatt-bit.github.io/blog/category/misc2.html">2</a></li>
+                    <li class=""><a
+                            href="http://lmatt-bit.github.io/blog/category/misc3.html">3</a></li>
+                    <li class="active"><a
+                            href="http://lmatt-bit.github.io/blog/category/misc4.html">4</a></li>
+                    <li class=""><a
+                            href="http://lmatt-bit.github.io/blog/category/misc5.html">5</a></li>
+                <li class="next"><a
+                        href="http://lmatt-bit.github.io/blog/category/misc5.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-social-link-square fa-lg"></i> social link</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://lmatt-bit.github.io/blog/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lmatt-bit.github.io/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lmatt-bit.github.io/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lmatt-bit.github.io/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

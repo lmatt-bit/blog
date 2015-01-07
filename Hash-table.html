@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Hash table - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lmatt-bit.github.io/blog/Hash-table.html">
+
+        <meta name="author" content="lmatt wang" />
+        <meta name="description" content="Hash table定义(摘自wikidpedia)\ In computer science, a hash table or hash map is a data structure that uses a hash function to map identifying values, known as keys (e.g., a person&#39;s name), to their associated values (e.g., their telephone number).\ hash table简单来说就是一种数据结构，可以通过一个key来查询对应的value值（一般情况下效率是很高的）。 记得以前大学时，老师曾出过这样的一道题目 ..." />
+
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Hash table"/>
+        <meta property="og:url" content="http://lmatt-bit.github.io/blog/Hash-table.html"/>
+        <meta property="og:description" content="Hash table定义(摘自wikidpedia)\ In computer science, a hash table or hash map is a data structure that uses a hash function to map identifying values, known as keys (e.g., a person&#39;s name), to their associated values (e.g., their telephone number).\ hash table简单来说就是一种数据结构，可以通过一个key来查询对应的value值（一般情况下效率是很高的）。 记得以前大学时，老师曾出过这样的一道题目 ..."/>
+        <meta property="article:published_time" content="2010-11-28" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="lmatt wang" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://lmatt-bit.github.io/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://lmatt-bit.github.io/blog/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lmatt-bit.github.io/blog/" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html">
+                             关于我(About Me)
+                          </a></li>
+                        <li class="active">
+                            <a href="http://lmatt-bit.github.io/blog/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://lmatt-bit.github.io/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lmatt-bit.github.io/blog/Hash-table.html"
+                       rel="bookmark"
+                       title="Permalink to Hash table">
+                        Hash table
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-11-28T15:39:00+08:00"> Sun 28 November 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><strong>Hash
+table定义</strong>(摘自<a href="http://en.wikipedia.org/wiki/Hash_table">wikidpedia</a>)\
+In computer science, a hash table or hash map is a data structure that
+uses a hash function to map identifying values, known as keys (e.g., a
+person's name), to their associated values (e.g., their telephone
+number).\
+hash
+table简单来说就是一种数据结构，可以通过一个key来查询对应的value值（一般情况下效率是很高的）。</p>
+<p>记得以前大学时，老师曾出过这样的一道题目：编写程序来统计文本中出现过的字母以及次数。一个很完美的方案（貌似是老师给出的）如下所示：</p>
+<div class="highlight"><pre>int count[26];//不考虑文本中有大写字母的情况
+memset(count, 0, sizeof(count));
+读取文本中的一个字母c;
+int index = c - &#39;a&#39;;
+count[index]++;
+打印count数组中内容大于0的项；
+</pre></div>
+
+
+<p>这种方案就用到了hash
+table，将字母c转为index可以被看作hash函数，变换的过程没有出现冲突（这在其他情况下是很难出现的）。</p>
+<p><strong>hash table的实现</strong>\
+考虑下面一个问题，如何快速地查询某个人电话号码。\
+<img alt="hash
+table" src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/500px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" />\
+一种方法是使用<a href="http://en.wikipedia.org/wiki/Trie">trie</a>;另外一种就是这里提到的hash
+table。\
+要实现hash table，首先需要一个hash函数。\
+hash函数实现了key到下标的转换。下面是一个简单的hash函数，实现了人名到数组下标的转换。如果是其他类型的key，就需要选择其他的hash函数。好的hash函数能提高hash
+table的性能。整数形的key可以采用直接取余数(k%TABLE_SIZE)的方法，或者平方取中法（key平方后取数的中间几个bit）。</p>
+<div class="highlight"><pre>HASHTABLE table[TABLE_SIZE];
+int hash_name(char *name)
+ {
+    unsigned int h = 0;
+    unsigned int seed = 131;/* 31 131 1313 13131 131313 etc.. */
+    for(int i = 0; name[i]; i++) 
+    {
+        h += h * seed + name[i];
+    }
+    return (int)(h % TABLE_SIZE);
+}
+</pre></div>
+
+
+<p>在使用key得到数组下标后，就可以通过这个下标把value（这里是电话号码）存入hash
+table中。但需要注意的是，不同的key可能会得到相同下标，这种情况被称为Collision(冲突)。如何解决好Collision(冲突)问题，是hash
+table的关键。\
+通常处理Collision(冲突)的方法有两类：\
+1.open hashing, closed addressing（链地址法）\
+将所有下标相同的记录都存储到相同的链表中，而在table中存储链表的起始地址。\
+<img alt="chain" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/500px-Hash_table_5_0_1_1_1_1_0_LL.svg.png" />\
+2.closed hashing, open addressing（开放定址法）\
+开放定址法则与链地址法不同，在出现冲突后会按照某个特定顺序去找table中下一个空的位置。</p>
+<div class="highlight"><pre>fi = (f(key) + di) % TABLE_SIZE;//f(key)为hash函数，fi为找寻空位置时的序列，di为特定的序列
+</pre></div>
+
+
+<p>di一般取c1*i + c2 * ( i * i )。i为1,2,3,...k (k \&lt;= TABLE_SIZE - 1)\
+当c1=1, c2=0时，称为Linear probing(线性探测)。\
+当c2!=0时，称为Quadratic probing(二次探测)。\
+在二次探测时，需要注意一点，fi是否能取到所有下标。如果fi不能取到所有下标，就可能会出现无法插入元素的情况。\
+如果TABLE_SIZE为2的幂次，c1和c2可以取1/2。如果TABLE_SIZE为大于2的素数，则c1=0,c2=1或c1=1,c2=1或c1=1/2,c2=1/2都是可以的。\
+下面是线性探测的一个代码例子。</p>
+<div class="highlight"><pre>bool insert_item(ITEM item)
+{
+    int hi = hash_name(item.name);
+    while(table[hi])//这里假设没有全为0的电话号码
+    {
+        if(table[hi].phone == item.phone) return false;//已存在，插入失败
+        hi++;
+        if(hi &gt;= TABLE_SIZE) hi -= TABLE_SIZE;
+    }
+    table[hi].phone = item.phone;
+    table[hi].name = item.name;
+    return true;
+}
+</pre></div>
+
+
+<p>最后是hash table的查询，基本的过程与插入相同。下面是一个简单的代码例子。</p>
+<div class="highlight"><pre>int search_hash(char *key)
+{
+    int hi = hash_name(key);
+    while(table[hi])//这里假设没有全为0的电话号码
+    {
+        if(table[hi].name == key)
+        {
+             return table[hi].phone;
+        }
+        hi++;
+        if(hi &gt;= TABLE_SIZE) hi -= TABLE_SIZE;
+    }
+    return -1;//没有查到
+}
+</pre></div>
+
+
+<p>上面说明了如何构建hash table与如何查询的过程。在构建hash
+table时，需要注意TABLE_SIZE的大小。如果table的load太高，冲突产生的可能性越大，hash
+table的性能就越低。一般建议table的load在0.75以下。</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'Hash-table';
+                var disqus_url = 'http://lmatt-bit.github.io/blog/Hash-table.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-social-link-square fa-lg"></i> social link</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://lmatt-bit.github.io/blog/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lmatt-bit.github.io/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lmatt-bit.github.io/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lmatt-bit.github.io/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
