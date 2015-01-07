@@ -46,6 +46,12 @@ do not know            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                         <li><a href="../pages/Tomato-Tick-Discussion.html">
+                             Tomato Tick Discussion
+                          </a></li>
+                         <li><a href="../pages/guanyuwo(About-Me).html">
+                             关于我(About Me)
+                          </a></li>
                         <li >
                             <a href="../category/misc.html">Misc</a>
                         </li>
@@ -63,49 +69,6 @@ do not know            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="../ttserverxiangguan.html">ttserver相关</a></h2>
-                <div class="summary"><p>ttserver在32位机器上支持超过4g的数据库,编译时加上如下的选项：\
---enbale-off64</p>
-                    <a class="btn btn-default btn-xs" href="../ttserverxiangguan.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../dangqianmuluhechengxusuozaimulu.html">当前目录和程序所在目录</a></h2>
-                <div class="summary"><p><strong>1.python</strong>\
-当前目录：</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</pre></div>
-
-
-<p>程序所在目录：</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
-<span class="c">#os.path.split( os.path.realpath( sys.argv[0] ) )[0]</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
-</pre></div>
-
-
-<p><strong>2.vc/mfc</strong>\
-当前目录:</p>
-<div class="highlight"><pre>TCHAR path[MAX_PATH];
-GetCurrentDirectory(path, MAX_PATH);
-</pre></div>
-
-
-<p>程序所在目录:</p>
-<div class="highlight"><pre>TCHAR path[MAX_PATH];
-GetModuleFileName(NULL, path, MAX_PATH);
-</pre></div>
-
-
-<p><strong>3.c/c++(linux)</strong>\
-当前目录 ...</p>
-                    <a class="btn btn-default btn-xs" href="../dangqianmuluhechengxusuozaimulu.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="../quebaoFileOutputStreamjiangneirongxieruyingpan.html">确保FileOutputStream将内容写入硬盘</a></h2>
                 <div class="summary"><p>最近写了一个程序，需要在数据写入文件后立即读取该文件内容。这一简单的功能，却会时不时抛异常，令我十分不解。</p>
@@ -272,6 +235,53 @@ functionname，在函数functionname的入口处出设置断点。</p>
 <p>命令run(可以简写为r），运行程序。</p>
 <p>命令next ...</p>
                     <a class="btn btn-default btn-xs" href="../gdbdejibenshiyongchixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../pythonzhongdeimport.html">python中的import</a></h2>
+                <div class="summary"><p>[codesyntax lang="python" lines="fancy"]</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test1</span>
+<span class="kn">import</span> <span class="nn">pack1.pack2.test1</span>
+<span class="kn">from</span> <span class="nn">test1</span> <span class="kn">import</span> <span class="n">fun</span><span class="p">,</span> <span class="n">cla</span><span class="p">,</span> <span class="n">mod_name</span>
+<span class="kn">from</span> <span class="nn">.pack</span> <span class="kn">import</span> <span class="n">test1</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>第一行是python中导入module或者package的普通方式，通过这个语句，在接下来的代码中就可以使用test1
+module中所定义的function, class,
+var等。这类似C语言中的#include，只是在使用module中的的内容时需要加上"test."前缀（相当于c++中的namespace）。</p>
+<p>第二行同第一行，其中的pack1和pack2都是package，而test1只能是package或module（这与第三行有区别）。</p>
+<p>第三行是从test1
+module中导入fun(方法)，cla(类)，mod_name(子模块)。在使用这些被导入的内容时，可以不用使用前缀（不同于第一行内容）。</p>
+<p>第四行是在python2 ...</p>
+                    <a class="btn btn-default btn-xs" href="../pythonzhongdeimport.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../web.pyzaicgixiadeinstall.html">web.py在cgi下的install</a></h2>
+                <div class="summary"><p>由于ixwebhosting下无法安装web.py之类的程序，只能将web.py当作工程的一部分。这需要将web.py下的web目录拷贝到工程目录中，以后只需要import
+web就可以使用web.py了。</p>
+<p>web.py可以和Lighttpd,Apache搭配使用。web.py的官网推荐的是使用lighttpd（fastcgi）。这里介绍的是Apache下的CGI方式（这种方式效率不高，不过在ixwebhosting下只能使用这种方式）。</p>
+<p>在.htaccess下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>Options +ExecCGI
+AddHandler cgi-script .py
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>或者在http.conf（或apache2.conf）下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>Alias /foo/static/ /path/to/static
+ScriptAlias /foo/ /path/to/code.py
+</pre></div>
+
+
+<p>[/codesyntax ...</p>
+                    <a class="btn btn-default btn-xs" href="../web.pyzaicgixiadeinstall.html">more ...</a>
                 </div>
             </article>
             <hr/>

@@ -46,6 +46,12 @@ do not know            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                         <li><a href="../pages/Tomato-Tick-Discussion.html">
+                             Tomato Tick Discussion
+                          </a></li>
+                         <li><a href="../pages/guanyuwo(About-Me).html">
+                             关于我(About Me)
+                          </a></li>
                         <li >
                             <a href="../category/misc.html">Misc</a>
                         </li>
@@ -63,53 +69,6 @@ do not know            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="../pythonzhongdeimport.html">python中的import</a></h2>
-                <div class="summary"><p>[codesyntax lang="python" lines="fancy"]</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test1</span>
-<span class="kn">import</span> <span class="nn">pack1.pack2.test1</span>
-<span class="kn">from</span> <span class="nn">test1</span> <span class="kn">import</span> <span class="n">fun</span><span class="p">,</span> <span class="n">cla</span><span class="p">,</span> <span class="n">mod_name</span>
-<span class="kn">from</span> <span class="nn">.pack</span> <span class="kn">import</span> <span class="n">test1</span>
-</pre></div>
-
-
-<p>[/codesyntax]</p>
-<p>第一行是python中导入module或者package的普通方式，通过这个语句，在接下来的代码中就可以使用test1
-module中所定义的function, class,
-var等。这类似C语言中的#include，只是在使用module中的的内容时需要加上"test."前缀（相当于c++中的namespace）。</p>
-<p>第二行同第一行，其中的pack1和pack2都是package，而test1只能是package或module（这与第三行有区别）。</p>
-<p>第三行是从test1
-module中导入fun(方法)，cla(类)，mod_name(子模块)。在使用这些被导入的内容时，可以不用使用前缀（不同于第一行内容）。</p>
-<p>第四行是在python2 ...</p>
-                    <a class="btn btn-default btn-xs" href="../pythonzhongdeimport.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../web.pyzaicgixiadeinstall.html">web.py在cgi下的install</a></h2>
-                <div class="summary"><p>由于ixwebhosting下无法安装web.py之类的程序，只能将web.py当作工程的一部分。这需要将web.py下的web目录拷贝到工程目录中，以后只需要import
-web就可以使用web.py了。</p>
-<p>web.py可以和Lighttpd,Apache搭配使用。web.py的官网推荐的是使用lighttpd（fastcgi）。这里介绍的是Apache下的CGI方式（这种方式效率不高，不过在ixwebhosting下只能使用这种方式）。</p>
-<p>在.htaccess下添加如下代码：</p>
-<p>[codesyntax lang="apache"]</p>
-<div class="highlight"><pre>Options +ExecCGI
-AddHandler cgi-script .py
-</pre></div>
-
-
-<p>[/codesyntax]</p>
-<p>或者在http.conf（或apache2.conf）下添加如下代码：</p>
-<p>[codesyntax lang="apache"]</p>
-<div class="highlight"><pre>Alias /foo/static/ /path/to/static
-ScriptAlias /foo/ /path/to/code.py
-</pre></div>
-
-
-<p>[/codesyntax ...</p>
-                    <a class="btn btn-default btn-xs" href="../web.pyzaicgixiadeinstall.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="../apache-url-rewrite.html">apache url rewrite</a></h2>
                 <div class="summary"><p>最近在ixwebhosting上安装了web.py(python下的一个full stack web
@@ -256,6 +215,47 @@ c++更加oo了。下面就记录下template的几种用法。\</p>
 <p>函数的使用如下。\
 中的内容为类型名称，在某些情况（编译器能够理解 ...</p>
                     <a class="btn btn-default btn-xs" href="../Template.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../#pragmazhuanzaizibaidubaike).html">#pragma（转载自百度百科)</a></h2>
+                <div class="summary"><h1><a href="http://baike.baidu.com/view/1451188.htm">#pragma</a></h1>
+<p>#pragma 预处理指令详解\
+在所有的预处理指令中，#Pragma
+指令可能是最复杂的了，它的作用是设定编译器的状态或者是指示编译器完成一些特定的动作。#pragma指令对每个编译器给出了一个方法,在保持与C和
+C++语言完全兼容的情况下,给出主机或操作系统专有的特征。依据定义,编译指示是机器或操作系统专有的,且对于每个编译器都是不同的。\
+其格式一般为: #Pragma Para\
+其中Para 为参数，下面来看一些常用的参数。\
+(1)message 参数。 Message
+参数能够在编译信息输出窗口中输出相应的信息，这对于源代码信息的控制是非常重要的。其使用方法为：\
+#Pragma message(“消息文本”)\
+当编译器遇到这条指令时就在编译输出窗口中将消息文本打印出来。\
+当我们在程序中定义了许多宏来控制源代码版本的时候，我们自己有可能都会忘记有没有正确的设置这些宏，此时我们可以用这条指令在编译的时候就进行检查。假设我们希望判断自己有没有在源代码的什么地方定义了_X86这个宏可以用下面的方法\
+#ifdef _X86\
+#Pragma message(“_X86 macro activated!”)\
+#endif\
+当我们定义了_X86这个宏以后，应用程序在编译时就会在编译输出窗口里显示“_X86
+macro
+activated!”。我们就不会因为不记得自己定义的一些特定的宏而抓耳挠腮了 ...</p>
+                    <a class="btn btn-default btn-xs" href="../#pragmazhuanzaizibaidubaike).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../apache-peizhihttpdailifuwuqi.html">apache 配置http代理服务器</a></h2>
+                <div class="summary"><p>以opensuse11.2为例，在/etc/apache2/sysconfig.d/目录中的loadmodule.conf中添加如下内容。分别是载入cache,disk_cache,proxy和proxy_http模块。其中cache和disk_cache用于缓存信息，proxy和proxy_http（用于支持http）用于启用代理。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>LoadModule cache_module /usr/lib/apache2-prefork/mod_cache.so
+LoadModule disk_cache_module /usr/lib/apache2-prefork/mod_disk_cache.so
+LoadModule proxy_module /usr/lib/apache2-prefork/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>然后在/etc ...</p>
+                    <a class="btn btn-default btn-xs" href="../apache-peizhihttpdailifuwuqi.html">more ...</a>
                 </div>
             </article>
             <hr/>
