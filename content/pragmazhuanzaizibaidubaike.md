@@ -1,7 +1,7 @@
 Title: #pragma（转载自百度百科)
 Date: 2010-03-19 18:42
 Author: lmatt wang
-Slug: #pragmazhuanzaizibaidubaike)
+Slug: pragmazhuanzaizibaidubaike
 
 [\#pragma](http://baike.baidu.com/view/1451188.htm)
 ===================================================

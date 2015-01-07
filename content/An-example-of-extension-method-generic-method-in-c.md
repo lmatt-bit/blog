@@ -1,7 +1,7 @@
 Title: An example of extension method & generic method in c#
 Date: 2014-08-14 06:43
 Author: lmatt wang
-Slug: An-example-of-extension-method-&-generic-method-in-c#
+Slug: An-example-of-extension-method-generic-method-in-csharp
 
 Extension methods are defined as static methods but are called by using
 instance method syntax. Their first parameter specifies which type the
