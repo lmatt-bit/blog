@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href=".">
+        <meta name="author" content="lmatt" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="do not know"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="do not know"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+            <article>
+                <h2><a href="./pythonzhongdeimport.html">python中的import</a></h2>
+                <div class="summary"><p>[codesyntax lang="python" lines="fancy"]</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test1</span>
+<span class="kn">import</span> <span class="nn">pack1.pack2.test1</span>
+<span class="kn">from</span> <span class="nn">test1</span> <span class="kn">import</span> <span class="n">fun</span><span class="p">,</span> <span class="n">cla</span><span class="p">,</span> <span class="n">mod_name</span>
+<span class="kn">from</span> <span class="nn">.pack</span> <span class="kn">import</span> <span class="n">test1</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>第一行是python中导入module或者package的普通方式，通过这个语句，在接下来的代码中就可以使用test1
+module中所定义的function, class,
+var等。这类似C语言中的#include，只是在使用module中的的内容时需要加上"test."前缀（相当于c++中的namespace）。</p>
+<p>第二行同第一行，其中的pack1和pack2都是package，而test1只能是package或module（这与第三行有区别）。</p>
+<p>第三行是从test1
+module中导入fun(方法)，cla(类)，mod_name(子模块)。在使用这些被导入的内容时，可以不用使用前缀（不同于第一行内容）。</p>
+<p>第四行是在python2 ...</p>
+                    <a class="btn btn-default btn-xs" href="./pythonzhongdeimport.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./web.pyzaicgixiadeinstall.html">web.py在cgi下的install</a></h2>
+                <div class="summary"><p>由于ixwebhosting下无法安装web.py之类的程序，只能将web.py当作工程的一部分。这需要将web.py下的web目录拷贝到工程目录中，以后只需要import
+web就可以使用web.py了。</p>
+<p>web.py可以和Lighttpd,Apache搭配使用。web.py的官网推荐的是使用lighttpd（fastcgi）。这里介绍的是Apache下的CGI方式（这种方式效率不高，不过在ixwebhosting下只能使用这种方式）。</p>
+<p>在.htaccess下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>Options +ExecCGI
+AddHandler cgi-script .py
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>或者在http.conf（或apache2.conf）下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>Alias /foo/static/ /path/to/static
+ScriptAlias /foo/ /path/to/code.py
+</pre></div>
+
+
+<p>[/codesyntax ...</p>
+                    <a class="btn btn-default btn-xs" href="./web.pyzaicgixiadeinstall.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./apache-url-rewrite.html">apache url rewrite</a></h2>
+                <div class="summary"><p>最近在ixwebhosting上安装了web.py(python下的一个full stack web
+framework)，为了在路径中隐藏.py，需要使用url
+rewrite。apache中mod_rewrite可以实现这个功能。</p>
+<p>在ixwebhosting下，可以修改网页根目录下的.htaccess，具体内容见下。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/icons
+RewriteCond %{REQUEST_URI} !^/favicon.ico$
+RewriteCond %{REQUEST_URI} !^(/.*)+index.py/
+RewriteRule ^(.*)$ index.py/$1 [PT]
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>以后使用http://www.test.com/就相当于访问index.py，而且/*都由index.py来处理。\</p>
+<blockquote>
+<p>mod_rewrite还有更多的内容，以后逐渐更新
+</p></p>
+</blockquote>
+                    <a class="btn btn-default btn-xs" href="./apache-url-rewrite.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./subprocess(python).html">subprocess(python)</a></h2>
+                <div class="summary"><p>subprocess
+是python在2.4版本之后引入的用于subprocess管理的module。subprocess中有一个重要的类Popen和一个重要的方法call。下面对Popen和call进行相关说明。</p>
+<p>Popen用于新建一个subprocess，下面是它的构造函数。</p>
+<p><em>class</em> <code>subprocess.Popen</code><big>(</big><em>args</em>, <em>bufsize=0</em>,
+<em>executable=None</em>, <em>stdin=None</em>, <em>stdout=None</em>, <em>stderr=None</em>,
+<em>preexec_fn=None</em>, <em>close_fds=False</em>, <em>shell=False</em>, <em>cwd=None</em>,
+<em>env=None</em>, <em>universal_newlines=False</em>, <em>startupinfo=None</em>,
+<em>creationflags=0</em><big>)</big></p>
+<p>其中：</p>
+<p>args是运行进程的命令行（与shell中输入的命令行一样）；</p>
+<p><em>bufsize</em>, if given, has the same meaning as the corresponding ...</p>
+                    <a class="btn btn-default btn-xs" href="./subprocess(python).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./pyqtdeanzhuang(linuxxia).html">pyqt的安装(linux下)</a></h2>
+                <div class="summary"><p>nokia在收购qt之后，让qt出现了lgpl的licence，这一举动获得了不少赞许。nokia也希望pyqt能有lgpl的licence，只可惜与Riverbank谈判不拢，pyqt依旧是gpl的licence。迫不得已，nokia只好自己搞个类似pyqt的项目（pyside）。这个pyside项目的协议是lgpl的，目前还不够完善，但相信以后的前景是不错的。</p>
+<p>目前pyqt仍然是主流，所以下面说一下pyqt的安装。由于windows有安装的exe，几乎不用配置就可以安装上，这里就不做说明。</p>
+<p>要在linux下安装pyqt，首先需要安装Riverbank的SIP。在SIP安装前需要确保系统上安装了python-devel（python
+开发的一些文件，在fedora下可以直接yum安装）。</p>
+<p>安装SIP过程：</p>
+<p><span style="color: #3366ff;">1.下载SIP，解压。</span></p>
+<p><span style="color: #3366ff;">2.从命令行中进入SIP的目录，输入python
+configure.py</span></p>
+<p><span
+style="color: #3366ff;">3.在上一步成功之后，输入make（需要确保有make，gcc等一系列编译工具）</span></p>
+<p><span style="color: #3366ff;">4.在上一步成功之后，输入make
+install。到此sip安装完成。</span></p>
+<p>接着是pyqt的安装：</p>
+<p><span style="color: #3366ff;">1.下载pyqt，解压 ...</span></p>
+                    <a class="btn btn-default btn-xs" href="./pyqtdeanzhuang(linuxxia).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./vimrcpeizhichixugengxin.html">vimrc配置（持续更新）</a></h2>
+                <div class="summary"><p>文章转载自http://jmcpherson.org/vimrc.html</p>
+<p>.vimrc and customization</p>
+<p>vim is extremely customizable. It will read the file .vimrc in your home
+directory before it starts. This file can contain settings and even
+scripts. The below settings are ones I've found helpful -- give them a
+try!</p>
+<p>set nocompatible</p>
+<p>This setting ...</p>
+                    <a class="btn btn-default btn-xs" href="./vimrcpeizhichixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./libvlcyupyqtdapeishiyong.html">libvlc与pyqt搭配使用</a></h2>
+                <div class="summary"><p>libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python,
+java,
+c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python
+binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/
+从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import
+vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ...</p>
+                    <a class="btn btn-default btn-xs" href="./libvlcyupyqtdapeishiyong.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./bianyilibtorrent-rasterbar(linuxxia).html">编译libtorrent rasterbar(linux下)</a></h2>
+                <div class="summary"><p>六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent,
+k**(名字忘记了，和KDE有些关系),
+transmission(在linux上貌似没法下载，仅支持mac
+os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent
+rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent
+rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\</p>
+<h2>1.编译boost</h2>
+<p>这里我使用了boost.build来编译生成。</p>
+<p>a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh</p>
+<p>b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ...</p>
+                    <a class="btn btn-default btn-xs" href="./bianyilibtorrent-rasterbar(linuxxia).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./gccbianyichixugengxin.html">gcc编译（持续更新）</a></h2>
+                <div class="summary"><p>gcc -I[path] 后接include目录</p>
+<p>gcc -L[path] 后接library目录,一般会与-l(L小写)[library
+name（如libabc.a,名称就为abc）]连用。</p>
+<p>gcc -static 静态链接。可能会产生"cannot
+find -lm"错误，这是由于缺少glibc-static的原因（fedora系统上就可能存在这个问题）。安装上glibc-static后，/usr/lib/目录下会出现libm.a这个文件。</p>
+<p>gcc -o[out name] 接输出文件的名称</p>
+<p>gcc -w                inhibit all warning message
+(不允许出现任何warning消息) ［东哥］</p>
+<p>gcc -Wall            打开部分的warning的flag,这部分flag所对应的
+warning可能是用户避免或觉得有问题的。</p>
+<p>gcc ...</p>
+                    <a class="btn btn-default btn-xs" href="./gccbianyichixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./Template.html">Template</a></h2>
+                <div class="summary"><p>文章内容参考了<a href="http://www.cplusplus.com/doc/tutorial/templates/">http://www.cplusplus.com/doc/tutorial/templates/</a></p>
+<p>个人觉得template的使用，使得
+c++更加oo了。下面就记录下template的几种用法。\</p>
+<h1><strong>Function template</strong></h1>
+<p>函数template的声明和定义一般使用如下的方法。</p>
+<p>[codesyntax lang="cpp" title="function template"]</p>
+<div class="highlight"><pre><span class="o">//</span><span class="nt">declaration</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span><span class="o">,</span> <span class="nt">T</span><span class="o">);</span>
+
+<span class="o">//</span><span class="nt">definition</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span> <span class="nt">lfs</span><span class="o">,</span> <span class="nt">T</span> <span class="nt">rfs</span><span class="o">)</span><span class="p">{</span>
+   <span class="n">return</span> <span class="p">(</span><span class="n">lfs</span> <span class="o">&gt;</span> <span class="n">rfs</span><span class="p">)</span><span class="o">?</span><span class="n">lfs</span><span class="o">:</span><span class="n">rfs</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>函数的使用如下。\
+中的内容为类型名称，在某些情况（编译器能够理解 ...</p>
+                    <a class="btn btn-default btn-xs" href="./Template.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="./index3.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="./index.html">1</a></li>
+                    <li class=""><a
+                            href="./index2.html">2</a></li>
+                    <li class=""><a
+                            href="./index3.html">3</a></li>
+                    <li class="active"><a
+                            href="./index4.html">4</a></li>
+                    <li class=""><a
+                            href="./index5.html">5</a></li>
+                <li class="next"><a
+                        href="./index5.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>misc - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="lmatt" />
+    <meta name="keywords" content="misc" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="do not know"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="do not know"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="../category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+            <article>
+                <h2><a href="../#pragmazhuanzaizibaidubaike).html">#pragma（转载自百度百科)</a></h2>
+                <div class="summary"><h1><a href="http://baike.baidu.com/view/1451188.htm">#pragma</a></h1>
+<p>#pragma 预处理指令详解\
+在所有的预处理指令中，#Pragma
+指令可能是最复杂的了，它的作用是设定编译器的状态或者是指示编译器完成一些特定的动作。#pragma指令对每个编译器给出了一个方法,在保持与C和
+C++语言完全兼容的情况下,给出主机或操作系统专有的特征。依据定义,编译指示是机器或操作系统专有的,且对于每个编译器都是不同的。\
+其格式一般为: #Pragma Para\
+其中Para 为参数，下面来看一些常用的参数。\
+(1)message 参数。 Message
+参数能够在编译信息输出窗口中输出相应的信息，这对于源代码信息的控制是非常重要的。其使用方法为：\
+#Pragma message(“消息文本”)\
+当编译器遇到这条指令时就在编译输出窗口中将消息文本打印出来。\
+当我们在程序中定义了许多宏来控制源代码版本的时候，我们自己有可能都会忘记有没有正确的设置这些宏，此时我们可以用这条指令在编译的时候就进行检查。假设我们希望判断自己有没有在源代码的什么地方定义了_X86这个宏可以用下面的方法\
+#ifdef _X86\
+#Pragma message(“_X86 macro activated!”)\
+#endif\
+当我们定义了_X86这个宏以后，应用程序在编译时就会在编译输出窗口里显示“_X86
+macro
+activated!”。我们就不会因为不记得自己定义的一些特定的宏而抓耳挠腮了 ...</p>
+                    <a class="btn btn-default btn-xs" href="../#pragmazhuanzaizibaidubaike).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../apache-peizhihttpdailifuwuqi.html">apache 配置http代理服务器</a></h2>
+                <div class="summary"><p>以opensuse11.2为例，在/etc/apache2/sysconfig.d/目录中的loadmodule.conf中添加如下内容。分别是载入cache,disk_cache,proxy和proxy_http模块。其中cache和disk_cache用于缓存信息，proxy和proxy_http（用于支持http）用于启用代理。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>LoadModule cache_module /usr/lib/apache2-prefork/mod_cache.so
+LoadModule disk_cache_module /usr/lib/apache2-prefork/mod_disk_cache.so
+LoadModule proxy_module /usr/lib/apache2-prefork/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>然后在/etc ...</p>
+                    <a class="btn btn-default btn-xs" href="../apache-peizhihttpdailifuwuqi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../c++-constdeyixiezhishi.html">c++ const的一些知识</a></h2>
+                <div class="summary"><p>const 指针</p>
+<p>const在*左边，是指指针所指的对象是不可以改变的；在*右边，则是指指针不能指向另外一个对象。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>int b = 10;
+const int *a = &amp;b;//or int const *a = &amp;b;
+*a = 11;//error
+
+int d = 20;
+int * const c = &amp;b;
+c = &amp;d;//error
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>const 引用</p>
+<p>const只能在&amp;左边，指所引用的对象不能被改变。如</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>int a = 10;
+const ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="../c++-constdeyixiezhishi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../peilinuxfuwuqishiyudaodeyixiewenti.html">配linux服务器时遇到的一些问题</a></h2>
+                <div class="summary"><p><strong>1.硬盘安装</strong></p>
+<p>有很长一段时间没有安装过linux了，所以对硬盘安装有些忘记。</p>
+<p>这里对硬盘安装的一些步骤进行下记录。首先需要安装上grub，这里提下grub4dos的安装，xp系统(vista和win
+7还不清楚)都可以通过修改boot.ini来引导grub。进入grub后，输入以下命令即可引导linux安装。命令中的vmlinuz和initrd.img都是从光盘映像中拷出来的，有可能名字不一样（这与不同版本的linux有关）。vmlinuz和initrd.img一般建议放在根目录下，这样可以方便知道分区的编号（命令中的“（hd0,0)”）。可以通过“find
+/ vmlinuz”命令来获得，需要注意中间的空格。</p>
+<p>[codesyntax lang="bash" lines="no"]</p>
+<div class="highlight"><pre>kernel (hd0,0)/vmlinuz
+initrd (hd0,0)/initrd.img
+boot
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>硬盘安装还需要注意的是映像所存放的文件系统。ntfs可能会使映像无法找到，最好使用fat32或linux的文件系统。</p>
+<p><strong>2.opensuse ...</strong></p>
+                    <a class="btn btn-default btn-xs" href="../peilinuxfuwuqishiyudaodeyixiewenti.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../ixwebhostingpeizhiwordpressdeanzhuang.html">ixwebhosting配置wordpress的安装</a></h2>
+                <div class="summary"><p>在域名目录下的cgi-bin目录中添加php.ini文件，文件内容如下。具体是什么意思，我还不太懂。:p</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre><span class="k">[PHP]</span>
+<span class="na">display_errors</span> <span class="o">=</span> <span class="s">Off</span>
+
+<span class="na">mbstring.language</span> <span class="o">=</span> <span class="s">neutral</span>
+<span class="na">mbstring.internal_encoding</span> <span class="o">=</span> <span class="s">EUC-JP</span>
+<span class="na">mbstring.http_input</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="na">mbstring.http_output</span> <span class="o">=</span> <span class="s">SJIS</span>
+<span class="na">mbstring.encoding_translation</span> <span class="o">=</span>
+<span class="na">mbstring.detect_order</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="na">mbstring.substitute_character</span> <span class="o">=</span>
+<span class="na">mbstring.func_overload</span> <span class="o">=</span> <span class="s">0</span>
+
+<span class="na">register_globals</span> <span class="o">=</span> <span class="s">Off</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>其他如joolma,durpal,textpattern貌似都可以这样配置（其中只有durpal没有试过）。</p>
+                    <a class="btn btn-default btn-xs" href="../ixwebhostingpeizhiwordpressdeanzhuang.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../kaizhangdiyipiankongjiandeyoulai.html">开张第一篇，空间的由来</a></h2>
+                <div class="summary"><p>这个学期刚开学的时候，我在godadday上面买了个lmatt.info的域名。初期的想法是用那个域名搭上google
+app
+engine，免费用下空间。可是好景不长，由于gfw的问题，使得ghs.google.com经常无法访问以致空间无法解析。在忍受了一段时间频繁更换ip地址之后，鄙人的小宇宙迸发，狠下血本在ixwebhosting上买下了这个虚拟空间。几百块大洋，就这样交给了洋人！痛心！</p>
+                    <a class="btn btn-default btn-xs" href="../kaizhangdiyipiankongjiandeyoulai.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="../category/misc4.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="../category/misc.html">1</a></li>
+                    <li class=""><a
+                            href="../category/misc2.html">2</a></li>
+                    <li class=""><a
+                            href="../category/misc3.html">3</a></li>
+                    <li class=""><a
+                            href="../category/misc4.html">4</a></li>
+                    <li class="active"><a
+                            href="../category/misc5.html">5</a></li>
+                <li class="next disabled"><a href="#">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Template - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./Template.html">
+
+        <meta name="author" content="lmatt wang" />
+        <meta name="description" content="文章内容参考了http://www.cplusplus.com/doc/tutorial/templates/ 个人觉得template的使用，使得 c++更加oo了。下面就记录下template的几种用法。\ Function template 函数template的声明和定义一般使用如下的方法。 [codesyntax lang=&#34;cpp&#34; title=&#34;function template&#34;] //declaration template //or template T getMax(T, T); //definition template //or template T getMax(T lfs, T rfs){ return (lfs &gt; rfs)?lfs:rfs; } [/codesyntax] 函数的使用如下。\ 中的内容为类型名称，在某些情况（编译器能够理解 ..." />
+
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Template"/>
+        <meta property="og:url" content="./Template.html"/>
+        <meta property="og:description" content="文章内容参考了http://www.cplusplus.com/doc/tutorial/templates/ 个人觉得template的使用，使得 c++更加oo了。下面就记录下template的几种用法。\ Function template 函数template的声明和定义一般使用如下的方法。 [codesyntax lang=&#34;cpp&#34; title=&#34;function template&#34;] //declaration template //or template T getMax(T, T); //definition template //or template T getMax(T lfs, T rfs){ return (lfs &gt; rfs)?lfs:rfs; } [/codesyntax] 函数的使用如下。\ 中的内容为类型名称，在某些情况（编译器能够理解 ..."/>
+        <meta property="article:published_time" content="2010-03-21" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="lmatt wang" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./Template.html"
+                       rel="bookmark"
+                       title="Permalink to Template">
+                        Template
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-21T08:38:00+08:00"> Sun 21 March 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>文章内容参考了<a href="http://www.cplusplus.com/doc/tutorial/templates/">http://www.cplusplus.com/doc/tutorial/templates/</a></p>
+<p>个人觉得template的使用，使得
+c++更加oo了。下面就记录下template的几种用法。\</p>
+<h1><strong>Function template</strong></h1>
+<p>函数template的声明和定义一般使用如下的方法。</p>
+<p>[codesyntax lang="cpp" title="function template"]</p>
+<div class="highlight"><pre><span class="o">//</span><span class="nt">declaration</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span><span class="o">,</span> <span class="nt">T</span><span class="o">);</span>
+
+<span class="o">//</span><span class="nt">definition</span>
+<span class="nt">template</span> <span class="o">//</span><span class="nt">or</span> <span class="nt">template</span> 
+<span class="nt">T</span> <span class="nt">getMax</span><span class="o">(</span><span class="nt">T</span> <span class="nt">lfs</span><span class="o">,</span> <span class="nt">T</span> <span class="nt">rfs</span><span class="o">)</span><span class="p">{</span>
+   <span class="n">return</span> <span class="p">(</span><span class="n">lfs</span> <span class="o">&gt;</span> <span class="n">rfs</span><span class="p">)</span><span class="o">?</span><span class="n">lfs</span><span class="o">:</span><span class="n">rfs</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>函数的使用如下。\
+中的内容为类型名称，在某些情况（编译器能够理解）下可以省略，下面的例子就可以省略。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>int a = 10, b = 11;
+int c = getMax(a, b);//or getMax(a, b)
+</pre></div>
+
+
+<p>[/codesyntax]\</p>
+<h1><strong>Class template</strong></h1>
+<p>类template的定义一般如下。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>template
+class MyArray{
+private:
+   const int N;
+  int len;
+  T *s;
+ MyArray();
+public:
+   MyArray(int n):N(n){
+      s = new T[N];
+     len = 0;
+  }
+ T at(int i);//declaration
+};
+
+template
+T MyArray::at(int i){
+    if(i &lt; len) return s[i];
+  else ;//throw exception
+}
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>类template的使用如下。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre><span class="nt">MyArray</span> <span class="nt">a</span><span class="o">(</span><span class="nt">10</span><span class="o">);</span>
+<span class="o">//</span><span class="nt">some</span> <span class="nt">code</span> <span class="nt">here</span>
+<span class="nt">std</span><span class="o">:</span><span class="nd">:cout</span> <span class="o">&lt;&lt;</span> <span class="nt">a</span><span class="nc">.at</span><span class="o">(</span><span class="nt">0</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="nt">std</span><span class="o">:</span><span class="nd">:endl</span><span class="o">;</span>
+</pre></div>
+
+
+<p>[/codesyntax]\</p>
+<h1><strong>Template specialization</strong></h1>
+<p>这里以文章开头<a href="http://www.cplusplus.com/doc/tutorial/templates/">链接</a>中给出的例子来进行说明。其中的mychar.increase()是我添加上去的，这句话会导致编译错误（error:
+‘class mycontainer<char>’ has no member named
+‘increase’）。这是由于template specialization并不有继承的关系。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre><span class="c1">// template specialization</span>
+<span class="cp">#include </span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// class template:</span>
+<span class="k">template</span> 
+<span class="k">class</span> <span class="nc">mycontainer</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">element</span><span class="p">;</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">mycontainer</span> <span class="p">(</span><span class="n">T</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span><span class="n">element</span><span class="o">=</span><span class="n">arg</span><span class="p">;}</span>
+    <span class="n">T</span> <span class="n">increase</span> <span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="o">++</span><span class="n">element</span><span class="p">;}</span>
+<span class="p">};</span>
+
+<span class="c1">// class template specialization:</span>
+<span class="k">template</span>
+
+<span class="k">class</span> <span class="nc">mycontainer</span>
+</pre></div>
+
+
+<p></char><char> {\
+ char element;\
+ public:\
+ mycontainer (char arg) {element=arg;}\
+ char uppercase ()\
+ {\
+ if ((element>='a')&amp;&amp;(element\&lt;='z'))\
+ element+='A'-'a';\
+ return element;\
+ }\
+};</p>
+<p>int main () {\
+ mycontainer<int> myint (7);\
+ mycontainer</int></char><char> mychar ('j');\
+ cout \&lt;\&lt; myint.increase() \&lt;\&lt; endl;\
+ cout \&lt;\&lt; mychar.uppercase() \&lt;\&lt; endl;</p>
+<p>//lmatt add,error!\
+ cout \&lt;\&lt; (char)mychar.increase() \&lt;\&lt; endl;\
+ //lmatt add</p>
+<p>return 0;\
+}\
+[/codesyntax]\</p>
+<h1>Non-type parameters for templates</h1>
+<p>在template中也能像函数那样使用常规的类型作为参数。如下代码所示。其中的MyArray2有default参数，可以直接使用MyArray2
+a;。</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>template
+class MyArray1{
+    T s[N];
+};
+template
+class MyArray2{
+ T s[N];
+};
+</pre></div>
+
+
+<p>[/codesyntax]\</p>
+<blockquote>
+<p>Template的声明和实现必须在同一个文件中，这是由于template是compiled on
+demand的，仅仅在被实例化的时候才被compile。同样由于这个原因，template的文件被多次引入也不会产生link
+error。
+</p></p>
+</blockquote>
+<p></char></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Articles by lmatt wang - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+        <meta name="author" content="lmatt" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="do not know"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="do not know"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="../category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+            <article>
+                <h2><a href="../ttserverxiangguan.html">ttserver相关</a></h2>
+                <div class="summary"><p>ttserver在32位机器上支持超过4g的数据库,编译时加上如下的选项：\
+--enbale-off64</p>
+                    <a class="btn btn-default btn-xs" href="../ttserverxiangguan.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../dangqianmuluhechengxusuozaimulu.html">当前目录和程序所在目录</a></h2>
+                <div class="summary"><p><strong>1.python</strong>\
+当前目录：</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+
+
+<p>程序所在目录：</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="c">#os.path.split( os.path.realpath( sys.argv[0] ) )[0]</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+</pre></div>
+
+
+<p><strong>2.vc/mfc</strong>\
+当前目录:</p>
+<div class="highlight"><pre>TCHAR path[MAX_PATH];
+GetCurrentDirectory(path, MAX_PATH);
+</pre></div>
+
+
+<p>程序所在目录:</p>
+<div class="highlight"><pre>TCHAR path[MAX_PATH];
+GetModuleFileName(NULL, path, MAX_PATH);
+</pre></div>
+
+
+<p><strong>3.c/c++(linux)</strong>\
+当前目录 ...</p>
+                    <a class="btn btn-default btn-xs" href="../dangqianmuluhechengxusuozaimulu.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../quebaoFileOutputStreamjiangneirongxieruyingpan.html">确保FileOutputStream将内容写入硬盘</a></h2>
+                <div class="summary"><p>最近写了一个程序，需要在数据写入文件后立即读取该文件内容。这一简单的功能，却会时不时抛异常，令我十分不解。</p>
+<p>原程序如下：\</p>
+<blockquote>
+<p>FileOutputStream os = new FileOutputStream("some_file");\
+os.write(data);\
+os.close();
+</p></p>
+</blockquote>
+<p>在查了jdk中关于flush()函数的介绍后，发现了一些问题。flush只保证数据已交付给了操作系统，无法确定已写入硬盘。</p>
+<p>以下是jdk中关于flush()函数的介绍：\</p>
+<blockquote>
+<p>Flushes this output stream and forces any buffered output bytes to be
+written out. The general contract of <code>flush</code> is that calling it is an
+indication that ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="../quebaoFileOutputStreamjiangneirongxieruyingpan.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../luyouqideyixiepeizhimingling.html">路由器的一些配置命令</a></h2>
+                <div class="summary"><p><strong>//enter admin</strong></p>
+<p>enable</p>
+<p><strong>//begine configure</strong></p>
+<p>configure terminal</p>
+<p><strong>//interface  fast.. configure</strong></p>
+<p>-Interface F.. 0/0(0/1)</p>
+<p>--ip address a.b.c.d ma.mb.mc.md</p>
+<p><strong>//tunnel configure</strong></p>
+<p>-Interface T.. number(数字）</p>
+<p>--tunnel source ip</p>
+<p>--tunnel dest.. ip</p>
+<p>--ip address a.b.c.d ma.mb.mc.md</p>
+<p>--ip ospf ...</p>
+                    <a class="btn btn-default btn-xs" href="../luyouqideyixiepeizhimingling.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../duqujarwenjianzhongdeziyuan.html">读取jar文件中的资源</a></h2>
+                <div class="summary"><p>在前面一篇文中，生成仪表盘时使用了背景图片和指针图片，如果将这些图片（资源）和代码打包到一个jar文件中，读取的时候需要注意一下路径问题。</p>
+<p>打包后路径如下图所示：</p>
+<table>
+<thead>
+<tr>
+<th>ict\</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--Dashboard.java\</td>
+</tr>
+<tr>
+<td>image\</td>
+</tr>
+<tr>
+<td>-bg.png\</td>
+</tr>
+<tr>
+<td>-pointer.png</td>
+</tr>
+</tbody>
+</table>
+<p>如需在Dashboard.java中读取bg.png和pointer.png资源，可以使用如下的代码：</p>
+<div class="highlight"><pre>this.getClass().getClassLoader().getResourceAsStream(&quot;images/bg.png&quot;);
+this.getClass().getClassLoader().getResourceAsStream(&quot;images/pointer.png&quot;);
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="../duqujarwenjianzhongdeziyuan.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../vlczhongwenzimuluanma(linuxxia).html">vlc中文字幕乱码(linux下)</a></h2>
+                <div class="summary"><p>仅仅为了记录...</p>
+<p>版本 :   vlc 1.0.5\
+设置：coding gb 选上\
+format 去掉\
+utf-8 auto detect 去掉\
+中文字体选择</p>
+                    <a class="btn btn-default btn-xs" href="../vlczhongwenzimuluanma(linuxxia).html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../wchar_txiangguandeyixie.html">wchar_t相关的一些</a></h2>
+                <div class="summary"><p><strong>1.单个宽字符的相关函数</strong></p>
+<p><strong>wctomb</strong> 将wchar_t字符变成多字节表示</p>
+<p>[codesyntax lang="cpp"]</p>
+<div class="highlight"><pre>wchar_t ch = L&#39;中&#39;;
+char mb[MB_CUR_MAX];
+int len = wctomb(mb, ch);//成功则返回的值大于0
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>与wctomb类似有<a href="http://www.cplusplus.com/reference/clibrary/cstdlib/mbtowc/">int mbtowc ( wchar_t * pwc, const char * pmb, size_t
+max );</a></p>
+<p><strong>2.宽字符串的相关函数</strong></p>
+<p><strong>wcstombs</strong>将一个wchar_t数组转为多字节表示</p>
+<div class="highlight"><pre>size_t wcstombs ( char * mbstr, const wchar_t * wcstr, size_t max );
+</pre></div>
+
+
+<p>其中max是mbstr的最大长度。\
+与mbstowcs相反的是size_t mbstowcs ( wchar_t * wcstr, const ...</p>
+                    <a class="btn btn-default btn-xs" href="../wchar_txiangguandeyixie.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../java-shengchengtupianyibiaopan.html">java 生成图片（仪表盘）</a></h2>
+                <div class="summary"><p>[codesyntax lang="java"]</p>
+<div class="highlight"><pre><span class="n">package</span> <span class="n">ict</span><span class="o">.</span><span class="n">dashboard</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.awt.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.image.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.imageio.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.font.FontRenderContext</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.geom.Rectangle2D</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Dashboard</span><span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">generateImage</span><span class="p">(</span><span class="n">OutputStream</span> <span class="n">os</span><span class="p">,</span> <span class="n">double</span> <span class="n">percent</span><span class="p">,</span> <span class="nb">int</span> <span class="n">radius</span><span class="p">){</span>
+
+        <span class="o">//</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="n">BufferedImage</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BufferedImage</span><span class="p">(</span><span class="n">radius</span> <span class="o">+</span> <span class="n">radius</span><span class="p">,</span> <span class="n">radius ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="../java-shengchengtupianyibiaopan.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../luyouqipeizhibeifenyuhuifuzhuanzai.html">路由器配置备份与恢复（转载）</a></h2>
+                <div class="summary"><h2><a name="intro">Introduction</a></h2>
+<p>Routers often get upgraded or swapped out for a number of reasons. This
+document provides the user with some basic steps to migrate the
+configuration from an existing router to a new router.\</p>
+<h2><a name="prereq">Prerequisites</a></h2>
+<h3><a name="req">Requirements</a></h3>
+<p>Before you use the information in this document, make sure that you meet
+these ...</p>
+                    <a class="btn btn-default btn-xs" href="../luyouqipeizhibeifenyuhuifuzhuanzai.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../gdbdejibenshiyongchixugengxin.html">gdb的基本使用（持续更新）</a></h2>
+                <div class="summary"><blockquote>
+<p>gcc -g test.c</p>
+</blockquote>
+<p>通过-g参数，可以生成gdb所需要的debug信息。可能会生成一些只有gdb才能使用的debug信息，这对其他的debug程序会造成影响。要控制这些特殊的debug信息，可以通过-gstabs+, -gstabs, -gxcoff和-gvms参数。\</p>
+<blockquote>
+<p>gdb a.out
+</p></p>
+</blockquote>
+<p>通过上条命令，这会启动gdb。之后就可以对a.out进行debug了。</p>
+<p>命令list(可以简写为字母"l")，列出代码。如果list后面没有参数，就是列出“上次列出代码”的后10行代码。"list -"，列出“上次列出代码”的前10行代码.
+"list linenumber"列出linenumber附近的10行代码. "list
+start,end"列出行号从start到end的代码。</p>
+<p>命令break, 设置断点。break linenumber，在linenumber处设置断点。break
+functionname，在函数functionname的入口处出设置断点。</p>
+<p>命令run(可以简写为r），运行程序。</p>
+<p>命令next ...</p>
+                    <a class="btn btn-default btn-xs" href="../gdbdejibenshiyongchixugengxin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="../author/lmatt-wang2.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="../author/lmatt-wang.html">1</a></li>
+                    <li class=""><a
+                            href="../author/lmatt-wang2.html">2</a></li>
+                    <li class="active"><a
+                            href="../author/lmatt-wang3.html">3</a></li>
+                    <li class=""><a
+                            href="../author/lmatt-wang4.html">4</a></li>
+                    <li class=""><a
+                            href="../author/lmatt-wang5.html">5</a></li>
+                <li class="next"><a
+                        href="../author/lmatt-wang4.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

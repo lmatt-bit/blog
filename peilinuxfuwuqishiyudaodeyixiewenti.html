@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>配linux服务器时遇到的一些问题 - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./peilinuxfuwuqishiyudaodeyixiewenti.html">
+
+        <meta name="author" content="lmatt wang" />
+        <meta name="description" content="1.硬盘安装 有很长一段时间没有安装过linux了，所以对硬盘安装有些忘记。 这里对硬盘安装的一些步骤进行下记录。首先需要安装上grub，这里提下grub4dos的安装，xp系统(vista和win 7还不清楚)都可以通过修改boot.ini来引导grub。进入grub后，输入以下命令即可引导linux安装。命令中的vmlinuz和initrd.img都是从光盘映像中拷出来的，有可能名字不一样（这与不同版本的linux有关）。vmlinuz和initrd.img一般建议放在根目录下，这样可以方便知道分区的编号（命令中的“（hd0,0)”）。可以通过“find / vmlinuz”命令来获得，需要注意中间的空格。 [codesyntax lang=&#34;bash&#34; lines=&#34;no&#34;] kernel (hd0,0)/vmlinuz initrd (hd0,0)/initrd.img boot [/codesyntax] 硬盘安装还需要注意的是映像所存放的文件系统。ntfs可能会使映像无法找到，最好使用fat32或linux的文件系统。 2.opensuse ..." />
+
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="配linux服务器时遇到的一些问题"/>
+        <meta property="og:url" content="./peilinuxfuwuqishiyudaodeyixiewenti.html"/>
+        <meta property="og:description" content="1.硬盘安装 有很长一段时间没有安装过linux了，所以对硬盘安装有些忘记。 这里对硬盘安装的一些步骤进行下记录。首先需要安装上grub，这里提下grub4dos的安装，xp系统(vista和win 7还不清楚)都可以通过修改boot.ini来引导grub。进入grub后，输入以下命令即可引导linux安装。命令中的vmlinuz和initrd.img都是从光盘映像中拷出来的，有可能名字不一样（这与不同版本的linux有关）。vmlinuz和initrd.img一般建议放在根目录下，这样可以方便知道分区的编号（命令中的“（hd0,0)”）。可以通过“find / vmlinuz”命令来获得，需要注意中间的空格。 [codesyntax lang=&#34;bash&#34; lines=&#34;no&#34;] kernel (hd0,0)/vmlinuz initrd (hd0,0)/initrd.img boot [/codesyntax] 硬盘安装还需要注意的是映像所存放的文件系统。ntfs可能会使映像无法找到，最好使用fat32或linux的文件系统。 2.opensuse ..."/>
+        <meta property="article:published_time" content="2010-03-12" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="lmatt wang" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./peilinuxfuwuqishiyudaodeyixiewenti.html"
+                       rel="bookmark"
+                       title="Permalink to 配linux服务器时遇到的一些问题">
+                        配linux服务器时遇到的一些问题
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-12T16:26:00+08:00"> Fri 12 March 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><strong>1.硬盘安装</strong></p>
+<p>有很长一段时间没有安装过linux了，所以对硬盘安装有些忘记。</p>
+<p>这里对硬盘安装的一些步骤进行下记录。首先需要安装上grub，这里提下grub4dos的安装，xp系统(vista和win
+7还不清楚)都可以通过修改boot.ini来引导grub。进入grub后，输入以下命令即可引导linux安装。命令中的vmlinuz和initrd.img都是从光盘映像中拷出来的，有可能名字不一样（这与不同版本的linux有关）。vmlinuz和initrd.img一般建议放在根目录下，这样可以方便知道分区的编号（命令中的“（hd0,0)”）。可以通过“find
+/ vmlinuz”命令来获得，需要注意中间的空格。</p>
+<p>[codesyntax lang="bash" lines="no"]</p>
+<div class="highlight"><pre>kernel (hd0,0)/vmlinuz
+initrd (hd0,0)/initrd.img
+boot
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>硬盘安装还需要注意的是映像所存放的文件系统。ntfs可能会使映像无法找到，最好使用fat32或linux的文件系统。</p>
+<p><strong>2.opensuse liveUSB安装</strong></p>
+<p>这次安装linux，本来打算是安装centos的，因为之前对centos进行过lamp的安装（参考<a href="http://www.centospub.com/">centos
+pub</a>）。可是后来硬盘安装centos时出现了问题，以致电脑无法启动。当时在实验室，手头只有u盘，只好用u盘来安装。在网上搜了些教程后，决定选择opensuse(因为它最简单)来安装。下面内容截取自<a href="http://cn.opensuse.org/index.php?title=LiveUSB&amp;diff=prev&amp;oldid=3791">opensuse
+wiki上liveUSB</a>的安装方法。</p>
+<p>1) 找到您的 USB 驱动盘被识别的方式:</p>
+<p>``` {style="padding-left: 30px;"}
+ linux-vgqb:~ # ls -l /dev/disk/by-id/<em>usb</em></p>
+<div class="highlight"><pre><span class="err">该命令将会输出如下结果</span><span class="o">:</span>
+
+<span class="err">```</span> <span class="p">{</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;padding-left: 30px;&quot;</span><span class="p">}</span>
+<span class="nt">lrwxrwxrwx</span> <span class="nt">1</span> <span class="nt">root</span> <span class="nt">root</span> <span class="nt">9</span> <span class="nt">13</span><span class="o">.</span> <span class="nt">Aug</span> <span class="nt">10</span><span class="nd">:04</span> <span class="o">/</span><span class="nt">dev</span><span class="o">/</span><span class="nt">disk</span><span class="o">/</span><span class="nt">by-id</span><span class="o">/</span><span class="nt">usb-Kingston_DataTraveler_II</span><span class="o">+</span><span class="nt">_5B751D8C1994-0</span><span class="nd">:0</span> <span class="nt">-</span><span class="o">&gt;</span> <span class="o">../../</span><span class="nt">sdb</span>
+</pre></div>
+
+
+<p>在此 <em>/dev/sdb</em> 是命令行中的简称，通常，直接使用 <em>/dev/disk/by-id/..</em>
+以防止写错硬盘导致数据丢失。</p>
+<p>2) 将 LiveCD iso 写入 usb stick, 请注意将这里举例的 /dev/sdb
+用您自己的具体硬盘设备代替（上面命令输出的设备信息）:</p>
+<p><code>{style="padding-left: 30px;"}
+dd if=openSUSE-KDE4-LiveCD-x86_64-Build0219-Media.iso of=/dev/sdb bs=4M</code></p>
+<p><strong>3. lamp的安装</strong></p>
+<p>装上opensuse后，网上搜了下lamp的安装方法，结果意外找到一个不错的网站<a href="http://www.howtoforge.com">howtoforge</a>。通过上面的教程，成功安装上了lamp。开始在本地都浏览都没有任何问题，可是后来换台主机浏览就出现了异常情况。好端端的html文件都打不开（提示下载什么bin文件），而且图片都无法显示，而linux服务器上却能正常访问。这着实让我郁闷！想找人问，却发现现在才早上8点。只好自己在网上搜索，在碰壁N次之后居然让我给找到了。在apache的配置文件中添加如下两行内容。不过这个原因，直到现在我也没弄懂。在xamp网站上，只是说不添加这两行，某些linux服务器下无法显示图片。这里只记录下问题的表现，所有的静态文件使用浏览器打开时会在首部添加上http的头信息和一些不知名的乱码（下次有空研究一下，可能会弄清楚问题的原因）。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre>EnableSendfile Off
+EnableMMAP Off
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p><strong>4. ssh的配置</strong></p>
+<p>这里简单写下ssh的配置</p>
+<p>修改
+sshd_config中的一些配置，然后对/etc/host.deny和/etc/host.allow进行修改。</p>
+<p>5.文件权限</p>
+<p>之前程序是在windows下编写和运行的，在对文件操作时不用考虑太多文件的权限问题。可转到linux后，文件的读写出现比较严重的问题。通过修改/etc/profile(貌似还可以通过修改.bash_profile或者.bashrc来实现)来实现文件创建时默认权限来解决。这里就用到了umask。umask
+022是默认的，对新创建的文件夹是777-022=755,而文件则是666-022=644。</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>二分图最大匹配 - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./erfentuzuidapipei.html">
+
+        <meta name="author" content="lmatt wang" />
+        <meta name="description" content="二分图定义（摘自wiki）\ In the mathematical field of graph theory, a bipartite graph (or bigraph) is a graph whose vertices can be divided into two disjoint sets U and V such that every edge connects a vertex in U to one in V; that is, U and V are independent sets ..." />
+
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="二分图最大匹配"/>
+        <meta property="og:url" content="./erfentuzuidapipei.html"/>
+        <meta property="og:description" content="二分图定义（摘自wiki）\ In the mathematical field of graph theory, a bipartite graph (or bigraph) is a graph whose vertices can be divided into two disjoint sets U and V such that every edge connects a vertex in U to one in V; that is, U and V are independent sets ..."/>
+        <meta property="article:published_time" content="2010-11-23" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="lmatt wang" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./erfentuzuidapipei.html"
+                       rel="bookmark"
+                       title="Permalink to 二分图最大匹配">
+                        二分图最大匹配
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-11-23T14:16:00+08:00"> Tue 23 November 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><strong>二分图定义</strong>（摘自wiki）\
+In the mathematical field of graph theory, a <a href="http://en.wikipedia.org/wiki/Bipartite_graph">bipartite
+graph</a> (or bigraph) is a
+graph whose vertices can be divided into two disjoint sets U and V such
+that every edge connects a vertex in U to one in V; that is, U and V are
+independent sets. Equivalently, a bipartite graph is a graph that does
+not contain any odd-length cycles.\
+简单的说，如果可以将一个无向图的所有顶点分为两个集合（U和V），且任何一条边的两个顶点都不在同一个顶点集合（即一个顶点在U中，另外一个在V中），那么这个图就是二分图。\
+下图就是一个二分图的例子\
+<img alt="二分图" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Simple-bipartite-graph.svg/500px-Simple-bipartite-graph.svg.png" /></p>
+<p><strong>最大匹配定义</strong>\
+假设G=（V，E）是一个二分图，若存在边的集合M属于E，且M中的所有边都没有公共顶点，则称M是G的一个匹配。边数最多的匹配就是最大匹配。\
+考虑下面这个问题：\
+有男生女生两群人参加一个集体舞会，男生都希望与自己中意的女生跳舞，如何组合才能使man中满意的人数最多？\
+为了简单起见，这里设定男生为U集合，女生为V集合，且|U|=|V|=4，编号为1的男生中意1号和2号女生，编号为2的男生中意2号女生，编号为3的男生中意1号和2号女生，编号为4的男生中意3和4号女生。这个例子就是一个二分图最大匹配问题。\
+<img alt="" src="https://docs.google.com/drawings/pub?id=1kRoLfuNZdAKaIuqlJjecflbmEsCVUP84aLPOe4pK8Qg&amp;w=480&amp;h=360" />\
+<strong>解决方法：</strong>\
+解决二分图最大匹配问题最常用的就是匈牙利树算法。具体流程如下：\
+1.匹配M初始化为空；\
+2.如果集合U中存在一个自由的顶点u，转到步骤3；否则，算法结束；\
+3.令r是集合U中一个自由顶点，用深度（广度）优先搜索方法，以r为根，构造一个交替路径（匹配边和未匹配边交替的路径）树T；\
+4.若T中存在一个扩展路径p（两个端点都是未覆盖点的交替路径（<strong>谢谢ccyjava指出错误</strong>）），更新匹配M；转到步骤2。\
+以上面的问题为例：\
+<img alt="" src="https://docs.google.com/drawings/pub?id=1xaXxZ7MS1wMPnu8tEOuueaXGQH6iPcjTPBmlgfEFzSc&amp;w=480&amp;h=360" />\
+从b1点开始深度搜索，b1->g1是一条扩展路径。\
+<img alt="" src="https://docs.google.com/drawings/pub?id=1uv1wieaKxpQYYzcQw2xF2tRIlDWslcdJS_KhbU2gios&amp;w=480&amp;h=360" />\
+从b2点开始深度搜索，b2->g1->b1->g2是一条扩展路径\
+<img alt="" src="https://docs.google.com/drawings/pub?id=1uv1wieaKxpQYYzcQw2xF2tRIlDWslcdJS_KhbU2gios&amp;w=480&amp;h=360" />\
+从b3开始深度搜索，没有扩展路径\
+<img alt="" src="https://docs.google.com/drawings/pub?id=1btWPc99OxDvZpqOTsJAoLH5Y-YYSP5uG8uNdrMME3Po&amp;w=480&amp;h=360" />\
+从b4开始深度搜索，b4->g3是一条扩展路径。</p>
+<p>
+[poj1469](http://poj.org/problem?id=1469)是一个二分图最大匹配问题，下面是一个代码实例。\
+
+<script src="https://gist.github.com/711819.js?file=courses_1469.cpp"></script>
+</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

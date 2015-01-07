@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>编译libtorrent rasterbar(linux下) - do not know</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./bianyilibtorrent-rasterbar(linuxxia).html">
+
+        <meta name="author" content="lmatt wang" />
+        <meta name="description" content="六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent, k**(名字忘记了，和KDE有些关系), transmission(在linux上貌似没法下载，仅支持mac os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\ 1.编译boost 这里我使用了boost.build来编译生成。 a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ..." />
+
+        <meta property="og:site_name" content="do not know" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="编译libtorrent rasterbar(linux下)"/>
+        <meta property="og:url" content="./bianyilibtorrent-rasterbar(linuxxia).html"/>
+        <meta property="og:description" content="六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent, k**(名字忘记了，和KDE有些关系), transmission(在linux上貌似没法下载，仅支持mac os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\ 1.编译boost 这里我使用了boost.build来编译生成。 a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ..."/>
+        <meta property="article:published_time" content="2010-03-26" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="lmatt wang" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+do not know            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./bianyilibtorrent-rasterbar(linuxxia).html"
+                       rel="bookmark"
+                       title="Permalink to 编译libtorrent rasterbar(linux下)">
+                        编译libtorrent rasterbar(linux下)
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-26T19:20:00+08:00"> Fri 26 March 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent,
+k**(名字忘记了，和KDE有些关系),
+transmission(在linux上貌似没法下载，仅支持mac
+os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent
+rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent
+rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\</p>
+<h2>1.编译boost</h2>
+<p>这里我使用了boost.build来编译生成。</p>
+<p>a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh</p>
+<p>b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local/bin）中，这样以后就可以直接使用bjam这个命令。</p>
+<p>c.切换到BOOST_ROOT/tools/build/v2目录，修改user-config.jam（具体详细操作可以参看user-config.jam文件中的内容）内容。在user-config.jam中找到using
+gcc这行，将前面的#去掉。</p>
+<p>d.进入BOOST_ROOT目录，在命令行中运行bjam
+stage。这个过程需要一段时间才能完成。完成后，BOOST_ROOT目录下会出现一个stage的目录，里面包含了boost所生成的lib。\</p>
+<h2>2.编译libtorrent rasterbar</h2>
+<p>这里我使用了automake和auotconf来生成，所以需要首先确认机器上是否已安装automake和autoconf。</p>
+<p>a.确保环境变量中有BOOST_ROOT，即是boost的根目录。</p>
+<p>b.进入libtorrent的根目录，在命令行下运行./configure --disable-debug --disable-encryption --without-zlib --prefix=\$HOME/libtorrent（其他具体参数可使用./configure --help来查看）。如果去掉--disable-encryption，需要确认你机器上安装有openssl。而--without-zlib是指不使用系统的zlib。--prefix是指libtorrent的安装目录（其实boost也是可以指定安装目录的，就是指其编译完后库文件的存放位置）。</p>
+<p>c.输入make install即可完成编译。\</p>
+<h2>3.libtorrent rasterbar测试程序的编译运行</h2>
+<p>使用如下命令实现编译</p>
+<p>g++ -I(boost的根目录) -I(libtorrent的include目录) -I(zlib的目录，在libtorrent的根目录下)
+(boost的lib目录+*.so) (libtorrent的lib目录+*.so) xx.cpp</p>
+<p>这里使用*.so是用了共享的方式链接。</p>
+<p>程序的运行需要确保，libtorrent的lib和boost的lib目录在系统搜索路径下。默认的搜索路径在/usr/lib，可以通过修改/etc/ld.so.conf来添加新的路径。添加完新的路径后，需要运行ldconfig命令以更新。</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 lmatt
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
