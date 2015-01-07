@@ -10,7 +10,7 @@
 
 
 
-<link rel="canonical" href="lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html">
+<link rel="canonical" href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html">
 
         <meta name="author" content="lmatt wang" />
         <meta name="description" content="六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent, k**(名字忘记了，和KDE有些关系), transmission(在linux上貌似没法下载，仅支持mac os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\ 1.编译boost 这里我使用了boost.build来编译生成。 a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ..." />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="do not know" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="编译libtorrent rasterbar(linux下)"/>
-        <meta property="og:url" content="lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html"/>
+        <meta property="og:url" content="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html"/>
         <meta property="og:description" content="六维、晨光等ipv6的bt下载站只支持为数不多的client，仅支持utorrent, k**(名字忘记了，和KDE有些关系), transmission(在linux上貌似没法下载，仅支持mac os)。为了能在linux下下载电影，我只好用wine+utorrent来搞定（不想装k**）。可是用的时间久了，总觉得有点什么。于是呢，我就想自己写个支持torrent协议的程序，再在上面添加上边下边播放（utorrent上一直没有，我觊觎这个功能很久了）的功能。在网上搜索了相关的一些资料，最后决定使用libtorrent rasterbar（网上还有另外一个叫libtorrent的库，而且那个库仅支持linux）。libtorrent rasterbar用到了boost的一些库，正好最近我也在学习boost。下面是libtorrent的编译过程。\ 1.编译boost 这里我使用了boost.build来编译生成。 a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ..."/>
         <meta property="article:published_time" content="2010-03-26" />
             <meta property="article:section" content="misc" />
@@ -26,11 +26,11 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="lmatt-bit.github.io/blog/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="lmatt-bit.github.io/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://lmatt-bit.github.io/blog/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="lmatt-bit.github.io/blog/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="lmatt-bit.github.io/blog/theme/css/style.css" type="text/css"/>
+    <link href="http://lmatt-bit.github.io/blog/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/style.css" type="text/css"/>
 
 
 </head>
@@ -45,23 +45,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="lmatt-bit.github.io/blog/" class="navbar-brand">
+            <a href="http://lmatt-bit.github.io/blog/" class="navbar-brand">
 do not know            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="lmatt-bit.github.io/blog/pages/Tomato-Tick-Discussion.html">
+                         <li><a href="http://lmatt-bit.github.io/blog/pages/Tomato-Tick-Discussion.html">
                              Tomato Tick Discussion
                           </a></li>
-                         <li><a href="lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html">
+                         <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html">
                              关于我(About Me)
                           </a></li>
                         <li class="active">
-                            <a href="lmatt-bit.github.io/blog/category/misc.html">Misc</a>
+                            <a href="http://lmatt-bit.github.io/blog/category/misc.html">Misc</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="lmatt-bit.github.io/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="http://lmatt-bit.github.io/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -77,7 +77,7 @@ do not know            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html"
+                    <a href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html"
                        rel="bookmark"
                        title="Permalink to 编译libtorrent rasterbar(linux下)">
                         编译libtorrent rasterbar(linux下)
@@ -135,7 +135,7 @@ stage。这个过程需要一段时间才能完成。完成后，BOOST_ROOT目�
             var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
 
                     var disqus_identifier = 'bianyilibtorrent-rasterbar(linuxxia)';
-                var disqus_url = 'lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html';
+                var disqus_url = 'http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -173,7 +173,7 @@ stage。这个过程需要一段时间才能完成。完成后，BOOST_ROOT目�
 
 
 
-            <li class="list-group-item"><a href="lmatt-bit.github.io/blog/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+            <li class="list-group-item"><a href="http://lmatt-bit.github.io/blog/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                 </ul>
             </li>
@@ -214,13 +214,13 @@ stage。这个过程需要一段时间才能完成。完成后，BOOST_ROOT目�
       </div>
    </div>
 </footer>
-<script src="lmatt-bit.github.io/blog/theme/js/jquery.min.js"></script>
+<script src="http://lmatt-bit.github.io/blog/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="lmatt-bit.github.io/blog/theme/js/bootstrap.min.js"></script>
+<script src="http://lmatt-bit.github.io/blog/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="lmatt-bit.github.io/blog/theme/js/respond.min.js"></script>
+<script src="http://lmatt-bit.github.io/blog/theme/js/respond.min.js"></script>
 
     <!-- Disqus -->
     <script type="text/javascript">
