@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'lmatt'
 SITENAME = u'do not know'
-SITEURL = ''
+SITEURL = 'http://lmatt-bit.github.io/blog'
 
 PATH = 'content'
 
@@ -26,13 +26,13 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
+SOCIAL = (('social link', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True
 
 
 THEME = '../pelican-bootstrap3'
