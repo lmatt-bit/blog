@@ -40,6 +40,6 @@ THEME = '../pelican-bootstrap3'
 PLUGIN_PATHS=['../pelican-plugins']
 PLUGINS=['disqus_static', 'pelican_gist']
 
-DISQUS_SITENAME='github pages'
+DISQUS_SITENAME='lmattbit'
 DISQUS_SECRET_KEY='rB2wbazGTv3QE7X7LjSQQOLIuvOSKzPfMCBw8LR7OQvckPQWrAPA6I0DKIPfRV51'
 DISQUS_PUBLIC_KEY='XDvnhdAsVekBPEIrHocRDlOad2H6KT6M301MB082EZT9zoUKIg9QDphQb4hFSMtE'
