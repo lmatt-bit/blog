@@ -23,7 +23,7 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         )
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
@@ -35,4 +35,11 @@ DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
 
 
-THEME = '/home/denwan/github/pelican-bootstrap3'
+THEME = '../pelican-bootstrap3'
+
+PLUGIN_PATHS=['../pelican-plugins']
+PLUGINS=['disqus_static', 'pelican_gist']
+
+DISQUS_SITENAME='github pages'
+DISQUS_SECRET_KEY='rB2wbazGTv3QE7X7LjSQQOLIuvOSKzPfMCBw8LR7OQvckPQWrAPA6I0DKIPfRV51'
+DISQUS_PUBLIC_KEY='XDvnhdAsVekBPEIrHocRDlOad2H6KT6M301MB082EZT9zoUKIg9QDphQb4hFSMtE'
