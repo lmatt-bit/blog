@@ -35,7 +35,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 
-THEME = '../pelican-bootstrap3'
+THEME = '../pelican-themes/Flex'
 
 PLUGIN_PATHS=['../pelican-plugins']
 PLUGINS=['disqus_static', 'pelican_gist']
