@@ -1,101 +1,68 @@
 <!DOCTYPE html>
-<html lang="en"
->
+<html lang="en">
 <head>
-    <title>libvlc与pyqt搭配使用 - do not know</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/font-awesome.min.css">
 
 
 
-<link rel="canonical" href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html">
-
-        <meta name="author" content="lmatt wang" />
-        <meta name="description" content="libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python, java, c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/ 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ..." />
-
-        <meta property="og:site_name" content="do not know" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="libvlc与pyqt搭配使用"/>
-        <meta property="og:url" content="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html"/>
-        <meta property="og:description" content="libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python, java, c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/ 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ..."/>
-        <meta property="article:published_time" content="2010-03-30" />
-            <meta property="article:section" content="misc" />
-            <meta property="article:author" content="lmatt wang" />
 
 
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://lmatt-bit.github.io/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
 
-    <link href="http://lmatt-bit.github.io/blog/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://lmatt-bit.github.io/blog/theme/css/style.css" type="text/css"/>
-
-
+<meta name="author" content="lmatt wang" />
+<meta name="description" content="libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python, java, c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/ 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ..." />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="do not know"/>
+<meta property="og:title" content="libvlc与pyqt搭配使用"/>
+<meta property="og:description" content="libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python, java, c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/ 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-03-30 17:35:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lmatt-bit.github.io/blog/author/lmatt-wang.html">
+<meta property="article:section" content="misc"/>
+<meta property="og:image" content="">
+  <title>do not know &ndash; libvlc与pyqt搭配使用</title>
 </head>
 <body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="http://lmatt-bit.github.io/blog/" class="navbar-brand">
-do not know            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                         <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html">
-                             关于我(About Me)
-                          </a></li>
-                        <li class="active">
-                            <a href="http://lmatt-bit.github.io/blog/category/misc.html">Misc</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://lmatt-bit.github.io/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+  <aside>
+    <div>
+      <a href="http://lmatt-bit.github.io/blog">
+        <img src="http://lmatt-bit.github.io/blog/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="http://lmatt-bit.github.io/blog"></a></h1>
+      <p></p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html#guanyuwo(About-Me)">关于我(About Me)</a></li>
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-social link" href="#" target="_blank"><i class="fa fa-social link"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
     </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
+  </aside>
+  <main>
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html"
-                       rel="bookmark"
-                       title="Permalink to libvlc与pyqt搭配使用">
-                        libvlc与pyqt搭配使用
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2010-03-30T17:35:00+08:00"> Tue 30 March 2010</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <p>libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python,
+<article>
+  <header>
+    <h1 id="libvlcyupyqtdapeishiyong">libvlc与pyqt搭配使用</h1>
+    <p>Posted on Tue 30 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a></p>
+  </header>
+  <div>
+    <p>libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python,
 java,
 c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python
 binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/
@@ -272,8 +239,8 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 165
 166
 167
-168</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/python</span>
-<span class="c"># coding=utf-8</span>
+168</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/python</span>
+<span class="c1"># coding=utf-8</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -290,7 +257,7 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 
         <span class="bp">self</span><span class="o">.</span><span class="n">volumeSlider</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QSlider</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">volumeSlider</span><span class="o">.</span><span class="n">setMaximum</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">volumeSlider</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span><span class="s">&quot;Audio slider&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volumeSlider</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span><span class="s2">&quot;Audio slider&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">positionSlider</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QSlider</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">positionSlider</span><span class="o">.</span><span class="n">setMaximum</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
@@ -307,9 +274,9 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 
         <span class="bp">self</span><span class="o">.</span><span class="n">inst</span> <span class="o">=</span> <span class="n">vlc</span><span class="o">.</span><span class="n">Instance</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inst</span><span class="o">.</span><span class="n">media_player_new</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;linux2&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;linux2&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">set_xwindow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">videoWidget</span><span class="o">.</span><span class="n">winId</span><span class="p">())</span>
-        <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;win32&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;win32&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">set_hwnd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">videoWidget</span><span class="o">.</span><span class="n">winId</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -321,7 +288,7 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
         <span class="bp">self</span><span class="o">.</span><span class="n">poller</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">changeVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newVolume</span><span class="p">):</span>
-        <span class="c">#print &#39;volume&#39;</span>
+        <span class="c1">#print &#39;volume&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inst</span><span class="o">.</span><span class="n">audio_set_volume</span><span class="p">(</span><span class="n">newVolume</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">changePosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newPosition</span><span class="p">):</span>
@@ -334,12 +301,12 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 
     <span class="k">def</span> <span class="nf">updateInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">media</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">get_media</span><span class="p">()</span>
-        <span class="c">#print &#39;tick&#39;</span>
+        <span class="c1">#print &#39;tick&#39;</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">media</span><span class="p">:</span>
             <span class="k">return</span>
 
-        <span class="c">#print &#39;tick&#39;</span>
+        <span class="c1">#print &#39;tick&#39;</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">positionSlider</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
         <span class="n">volume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inst</span><span class="o">.</span><span class="n">audio_get_volume</span><span class="p">()</span>
@@ -351,8 +318,8 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">set_media</span><span class="p">(</span><span class="n">media</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 
-    <span class="c">#def sizeHint(self):</span>
-    <span class="c">#   return QtCore.QSize(750, 500)</span>
+    <span class="c1">#def sizeHint(self):</span>
+    <span class="c1">#   return QtCore.QSize(750, 500)</span>
 
 <span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -367,7 +334,7 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 
     <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="k">pass</span>
-        <span class="c">#event.ignore()</span>
+        <span class="c1">#event.ignore()</span>
 
     <span class="k">def</span> <span class="nf">setupUI</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">VLCWidget</span><span class="p">()</span>
@@ -379,19 +346,19 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
         <span class="n">widget</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">mainLayout</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s">&quot;SimplePlayer&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;SimplePlayer&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">setupActions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">addFilesAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s">&quot;Add &amp;Files;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
-            <span class="n">shortcut</span><span class="o">=</span><span class="s">&quot;Ctrl+F&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">addFiles</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">exitAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s">&quot;E&amp;xit;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
-            <span class="n">shortcut</span><span class="o">=</span><span class="s">&quot;Ctrl+X&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">settingsAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s">&quot;&amp;Settings;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
-            <span class="n">shortcut</span><span class="o">=</span><span class="s">&quot;Ctrl+S&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">aboutAction</span><span class="o">=</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s">&quot;&amp;About;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
-            <span class="n">shortcut</span><span class="o">=</span><span class="s">&quot;Ctrl+A&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">about</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">aboutAuthorAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s">&quot;Author&#39;s &amp;HomePage;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
-            <span class="n">shortcut</span><span class="o">=</span><span class="s">&quot;Ctrl+H&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">aboutAuthor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addFilesAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s2">&quot;Add &amp;Files;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;Ctrl+F&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">addFiles</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exitAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s2">&quot;E&amp;xit;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;Ctrl+X&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settingsAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s2">&quot;&amp;Settings;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;Ctrl+S&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aboutAction</span><span class="o">=</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s2">&quot;&amp;About;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;Ctrl+A&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">about</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aboutAuthorAction</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s2">&quot;Author&#39;s &amp;HomePage;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;Ctrl+H&quot;</span><span class="p">,</span> <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">aboutAuthor</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
@@ -404,24 +371,24 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 
     <span class="k">def</span> <span class="nf">addFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="n">files</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileNames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&quot;Select&quot;</span><span class="p">)</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileNames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Select&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span><span class="p">:</span>
             <span class="k">return</span>
 
-        <span class="c">#self.player.play(unicode(files[0]))</span>
+        <span class="c1">#self.player.play(unicode(files[0]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">toUtf8</span><span class="p">()))</span>
 
     <span class="k">def</span> <span class="nf">setupMenus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">fileMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s">&quot;&amp;File;&quot;</span><span class="p">)</span>
+        <span class="n">fileMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s2">&quot;&amp;File;&quot;</span><span class="p">)</span>
         <span class="n">fileMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addFilesAction</span><span class="p">)</span>
         <span class="n">fileMenu</span><span class="o">.</span><span class="n">addSeparator</span><span class="p">()</span>
         <span class="n">fileMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exitAction</span><span class="p">)</span>
 
-        <span class="n">toolMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s">&quot;&amp;Tools;&quot;</span><span class="p">)</span>
+        <span class="n">toolMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s2">&quot;&amp;Tools;&quot;</span><span class="p">)</span>
         <span class="n">toolMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settingsAction</span><span class="p">)</span>
 
-        <span class="n">aboutMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s">&quot;&amp;Help;&quot;</span><span class="p">)</span>
+        <span class="n">aboutMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s2">&quot;&amp;Help;&quot;</span><span class="p">)</span>
         <span class="n">aboutMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aboutAction</span><span class="p">)</span>
         <span class="n">aboutMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aboutAuthorAction</span><span class="p">)</span>
 
@@ -431,9 +398,9 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
         <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">((</span><span class="n">screen</span><span class="o">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
             <span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">height</span><span class="p">()</span> <span class="o">-</span> <span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">setApplicationName</span><span class="p">(</span><span class="s">&quot;SimplePlayer&quot;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">setApplicationName</span><span class="p">(</span><span class="s2">&quot;SimplePlayer&quot;</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">setQuitOnLastWindowClosed</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="n">window</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
@@ -444,120 +411,48 @@ path（path为视频文件的路径）。如果成功配置，会弹出一个视
 </td></tr></table>
 
 <p>[/codesyntax]</p>
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lmattbit';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
 
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'libvlcyupyqtdapeishiyong';
-                var disqus_url = 'http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="#"><i class="fa fa-social-link-square fa-lg"></i> social link</a></li>
-                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
-              </ul>
-            </li>
+    <footer>
+        <p>&copy; lmatt </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
 
 
 
-            <li class="list-group-item"><a href="http://lmatt-bit.github.io/blog/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                </ul>
-            </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2014 lmatt
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="http://lmatt-bit.github.io/blog/theme/js/jquery.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://lmatt-bit.github.io/blog/theme/js/bootstrap.min.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://lmatt-bit.github.io/blog/theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'lmattbit'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
-
-</body>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "libvlc与pyqt搭配使用",
+  "headline": "libvlc与pyqt搭配使用",
+  "datePublished": "2010-03-30 17:35:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "lmatt wang",
+    "url": "http://lmatt-bit.github.io/blog/author/lmatt-wang.html"
+  },
+  "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
+  "url": "http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html",
+  "description": "libvlc是vlc播放器社区所提供的一个库，使用这个库，可以快速实现一个全能的播放器（支持很多视频格式的播放）。对于这个库，官方提供的是c++版本，不过现在有很多语言的binding，如python, java, c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt联合起来使用，我选择了python binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/ 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ..."
+}
+</script></body>
 </html>
