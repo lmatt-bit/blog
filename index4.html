@@ -3,12 +3,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/font-awesome.min.css">
 
 
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="do not know Atom">
 
 
 
@@ -23,29 +24,24 @@
 <meta property="og:title" content="do not know"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://lmatt-bit.github.io/blog"/>
+<meta property="og:url" content=""/>
 
   <title>do not know</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="http://lmatt-bit.github.io/blog">
-        <img src="http://lmatt-bit.github.io/blog/theme/img/profile.png" alt="" title="">
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
       </a>
-      <h1><a href="http://lmatt-bit.github.io/blog"></a></h1>
+      <h1><a href=""></a></h1>
       <p></p>
       <nav>
         <ul class="list">
-          <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html#guanyuwo(About-Me)">关于我(About Me)</a></li>
-          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="/pages/guanyuwo(About-Me).html#guanyuwo(About-Me)">关于我(About Me)</a></li>
         </ul>
       </nav>
       <ul class="social">
-        <li><a class="sc-social link" href="#" target="_blank"><i class="fa fa-social link"></i></a></li>
-        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -53,10 +49,43 @@
 
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/subprocess(python).html#subprocess(python)">subprocess(python)</a></h2>
+    <h2><a href="/apache-url-rewrite.html#apache-url-rewrite">apache url rewrite</a></h2>
     <p>
-      Posted on Sun 18 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/subprocess(python).html#disqus_thread">Leave a comment</a>
+      Posted on Mon 19 April 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/apache-url-rewrite.html#disqus_thread">Leave a comment</a>
+    </p>
+  </header>
+  <div>
+      <p>最近在ixwebhosting上安装了web.py(python下的一个full stack web
+framework)，为了在路径中隐藏.py，需要使用url
+rewrite。apache中mod_rewrite可以实现这个功能。</p>
+<p>在ixwebhosting下，可以修改网页根目录下的.htaccess，具体内容见下。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre><span></span>RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/icons
+RewriteCond %{REQUEST_URI} !^/favicon.ico$
+RewriteCond %{REQUEST_URI} !^(/.*)+index.py/
+RewriteRule ^(.*)$ index.py/$1 [PT]
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>以后使用http://www.test.com/就相当于访问index.py，而且/*都由index.py来处理。\</p>
+<blockquote>
+<p>mod_rewrite还有更多的内容，以后逐渐更新
+</p></p>
+</blockquote>
+      <a class="btn" href="/apache-url-rewrite.html#apache-url-rewrite">Continue reading</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/subprocess(python).html#subprocess(python)">subprocess(python)</a></h2>
+    <p>
+      Posted on Sun 18 April 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/subprocess(python).html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -71,16 +100,16 @@
 <p>其中：</p>
 <p>args是运行进程的命令行（与shell中输入的命令行一样）；</p>
 <p><em>bufsize</em>, if given, has the same meaning as the corresponding ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/subprocess(python).html#subprocess(python)">Continue reading</a>
+      <a class="btn" href="/subprocess(python).html#subprocess(python)">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html#pyqtdeanzhuang(linuxxia)">pyqt的安装(linux下)</a></h2>
+    <h2><a href="/pyqtdeanzhuang(linuxxia).html#pyqtdeanzhuang(linuxxia)">pyqt的安装(linux下)</a></h2>
     <p>
-      Posted on Sun 18 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html#disqus_thread">Leave a comment</a>
+      Posted on Sun 18 April 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/pyqtdeanzhuang(linuxxia).html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -98,16 +127,16 @@ style="color: #3366ff;">3.在上一步成功之后，输入make（需要确保�
 install。到此sip安装完成。</span></p>
 <p>接着是pyqt的安装：</p>
 <p><span style="color: #3366ff;">1.下载pyqt，解压 ...</span></p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html#pyqtdeanzhuang(linuxxia)">Continue reading</a>
+      <a class="btn" href="/pyqtdeanzhuang(linuxxia).html#pyqtdeanzhuang(linuxxia)">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/vimrcpeizhichixugengxin.html#vimrcpeizhichixugengxin">vimrc配置（持续更新）</a></h2>
+    <h2><a href="/vimrcpeizhichixugengxin.html#vimrcpeizhichixugengxin">vimrc配置（持续更新）</a></h2>
     <p>
-      Posted on Sun 18 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/vimrcpeizhichixugengxin.html#disqus_thread">Leave a comment</a>
+      Posted on Sun 18 April 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/vimrcpeizhichixugengxin.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -119,16 +148,16 @@ scripts. The below settings are ones I've found helpful -- give them a
 try!</p>
 <p>set nocompatible</p>
 <p>This setting ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/vimrcpeizhichixugengxin.html#vimrcpeizhichixugengxin">Continue reading</a>
+      <a class="btn" href="/vimrcpeizhichixugengxin.html#vimrcpeizhichixugengxin">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html#libvlcyupyqtdapeishiyong">libvlc与pyqt搭配使用</a></h2>
+    <h2><a href="/libvlcyupyqtdapeishiyong.html#libvlcyupyqtdapeishiyong">libvlc与pyqt搭配使用</a></h2>
     <p>
-      Posted on Tue 30 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html#disqus_thread">Leave a comment</a>
+      Posted on Tue 30 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/libvlcyupyqtdapeishiyong.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -138,16 +167,16 @@ c#等。要提到的一点是，libvlc是gpl协议的。为了更方便与pyqt�
 binding的libvlc。对于python版本，官方wiki上所给出的链接地址是错误(可能是过期的原因)的，下面给出最新的地址。http://liris.cnrs.fr/advene/download/python-ctypes/
 从最新的地址下载到vlc.py文件之后，你可以将vlc.py放到sit-package或当前工作目录中。如果要导入这个文件，只需要在python脚本中添加import
 vlc即可。python版libvlc的api详情可参见http://liris.cnrs.fr/advene/download/python-ctypes/doc/index.html。要实现视频的播放，仅仅靠一个vlc.py是不够的，您还需要确保个人的机器上有vlc的lib ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/libvlcyupyqtdapeishiyong.html#libvlcyupyqtdapeishiyong">Continue reading</a>
+      <a class="btn" href="/libvlcyupyqtdapeishiyong.html#libvlcyupyqtdapeishiyong">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html#bianyilibtorrent-rasterbar(linuxxia)">编译libtorrent rasterbar(linux下)</a></h2>
+    <h2><a href="/bianyilibtorrent-rasterbar(linuxxia).html#bianyilibtorrent-rasterbar(linuxxia)">编译libtorrent rasterbar(linux下)</a></h2>
     <p>
-      Posted on Fri 26 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html#disqus_thread">Leave a comment</a>
+      Posted on Fri 26 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/bianyilibtorrent-rasterbar(linuxxia).html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -161,16 +190,16 @@ rasterbar用到了boost的一些库，正好最近我也在学习boost。下面�
 <p>这里我使用了boost.build来编译生成。</p>
 <p>a.首先进入BOOST_ROOT/tools/jam/src目录（BOOST_ROOT为boost的根目录)，接着在命令行中运行./build.sh</p>
 <p>b.将上一步所生成bin.XXX目录中的bjam拷贝到系统的path（如/usr/local ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/bianyilibtorrent-rasterbar(linuxxia).html#bianyilibtorrent-rasterbar(linuxxia)">Continue reading</a>
+      <a class="btn" href="/bianyilibtorrent-rasterbar(linuxxia).html#bianyilibtorrent-rasterbar(linuxxia)">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/gccbianyichixugengxin.html#gccbianyichixugengxin">gcc编译（持续更新）</a></h2>
+    <h2><a href="/gccbianyichixugengxin.html#gccbianyichixugengxin">gcc编译（持续更新）</a></h2>
     <p>
-      Posted on Thu 25 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/gccbianyichixugengxin.html#disqus_thread">Leave a comment</a>
+      Posted on Thu 25 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/gccbianyichixugengxin.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -185,16 +214,16 @@ find -lm"错误，这是由于缺少glibc-static的原因（fedora系统上就�
 <p>gcc -Wall            打开部分的warning的flag,这部分flag所对应的
 warning可能是用户避免或觉得有问题的。</p>
 <p>gcc ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/gccbianyichixugengxin.html#gccbianyichixugengxin">Continue reading</a>
+      <a class="btn" href="/gccbianyichixugengxin.html#gccbianyichixugengxin">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/Template.html#Template">Template</a></h2>
+    <h2><a href="/Template.html#Template">Template</a></h2>
     <p>
-      Posted on Sun 21 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/Template.html#disqus_thread">Leave a comment</a>
+      Posted on Sun 21 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/Template.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -219,16 +248,16 @@ c++更加oo了。下面就记录下template的几种用法。\</p>
 <p>[/codesyntax]</p>
 <p>函数的使用如下。\
 中的内容为类型名称，在某些情况（编译器能够理解 ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/Template.html#Template">Continue reading</a>
+      <a class="btn" href="/Template.html#Template">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/pragmazhuanzaizibaidubaike.html#pragmazhuanzaizibaidubaike">#pragma（转载自百度百科)</a></h2>
+    <h2><a href="/pragmazhuanzaizibaidubaike.html#pragmazhuanzaizibaidubaike">#pragma（转载自百度百科)</a></h2>
     <p>
-      Posted on Fri 19 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/pragmazhuanzaizibaidubaike.html#disqus_thread">Leave a comment</a>
+      Posted on Fri 19 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/pragmazhuanzaizibaidubaike.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -250,16 +279,16 @@ C++语言完全兼容的情况下,给出主机或操作系统专有的特征。�
 当我们定义了_X86这个宏以后，应用程序在编译时就会在编译输出窗口里显示“_X86
 macro
 activated!”。我们就不会因为不记得自己定义的一些特定的宏而抓耳挠腮了 ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/pragmazhuanzaizibaidubaike.html#pragmazhuanzaizibaidubaike">Continue reading</a>
+      <a class="btn" href="/pragmazhuanzaizibaidubaike.html#pragmazhuanzaizibaidubaike">Continue reading</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">apache 配置http代理服务器</a></h2>
+    <h2><a href="/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">apache 配置http代理服务器</a></h2>
     <p>
-      Posted on Tue 16 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#disqus_thread">Leave a comment</a>
+      Posted on Tue 16 March 2010 in <a href="/category/misc.html">misc</a>
+      &#8226; <a href="/apache-peizhihttpdailifuwuqi.html#disqus_thread">Leave a comment</a>
     </p>
   </header>
   <div>
@@ -274,47 +303,15 @@ LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
 
 <p>[/codesyntax]</p>
 <p>然后在/etc ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">Continue reading</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html#c++-constdeyixiezhishi">c++ const的一些知识</a></h2>
-    <p>
-      Posted on Mon 15 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html#disqus_thread">Leave a comment</a>
-    </p>
-  </header>
-  <div>
-      <p>const 指针</p>
-<p>const在*左边，是指指针所指的对象是不可以改变的；在*右边，则是指指针不能指向另外一个对象。</p>
-<p>[codesyntax lang="cpp"]</p>
-<div class="highlight"><pre><span></span>int b = 10;
-const int *a = &amp;b;//or int const *a = &amp;b;
-*a = 11;//error
-
-int d = 20;
-int * const c = &amp;b;
-c = &amp;d;//error
-</pre></div>
-
-
-<p>[/codesyntax]</p>
-<p>const 引用</p>
-<p>const只能在&amp;左边，指所引用的对象不能被改变。如</p>
-<p>[codesyntax lang="cpp"]</p>
-<div class="highlight"><pre><span></span>int a = 10;
-const ...</pre></div>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html#c++-constdeyixiezhishi">Continue reading</a>
+      <a class="btn" href="/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">Continue reading</a>
   </div>
 </article>
 
   <div class="pagination">
-    <a class="btn" href="http://lmatt-bit.github.io/blog/index5.html">
+    <a class="btn" href="/index5.html">
       <i class="fa fa-angle-left"></i> Older Posts
     </a>
-    <a class="btn float-right" href="http://lmatt-bit.github.io/blog/index3.html">
+    <a class="btn float-right" href="/index3.html">
       Newer Posts <i class="fa fa-angle-right"></i>
     </a>
   </div>
@@ -333,7 +330,7 @@ const ...</pre></div>
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " do not know ",
-  "url" : "http://lmatt-bit.github.io/blog",
+  "url" : "",
   "image": "",
   "description": ""
 }

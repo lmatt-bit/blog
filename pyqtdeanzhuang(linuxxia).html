@@ -3,12 +3,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="http://lmatt-bit.github.io/blog/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/font-awesome.min.css">
 
 
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="do not know Atom">
 
 
 
@@ -23,11 +24,11 @@
 <meta property="og:title" content="pyqt的安装(linux下)"/>
 <meta property="og:description" content="nokia在收购qt之后，让qt出现了lgpl的licence，这一举动获得了不少赞许。nokia也希望pyqt能有lgpl的licence，只可惜与Riverbank谈判不拢，pyqt依旧是gpl的licence。迫不得已，nokia只好自己搞个类似pyqt的项目（pyside）。这个pyside项目的协议是lgpl的，目前还不够完善，但相信以后的前景是不错的。 目前pyqt仍然是主流，所以下面说一下pyqt的安装。由于windows有安装的exe，几乎不用配置就可以安装上，这里就不做说明。 要在linux下安装pyqt，首先需要安装Riverbank的SIP。在SIP安装前需要确保系统上安装了python-devel（python 开发的一些文件，在fedora下可以直接yum安装）。 安装SIP过程： 1.下载SIP，解压。 2.从命令行中进入SIP的目录，输入python configure.py 3.在上一步成功之后，输入make（需要确保有make，gcc等一系列编译工具） 4.在上一步成功之后，输入make install。到此sip安装完成。 接着是pyqt的安装： 1.下载pyqt，解压 ..."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html"/>
+<meta property="og:url" content="/pyqtdeanzhuang(linuxxia).html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2010-04-18 06:34:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="http://lmatt-bit.github.io/blog/author/lmatt-wang.html">
+<meta property="article:author" content="/author/lmatt-wang.html">
 <meta property="article:section" content="misc"/>
 <meta property="og:image" content="">
   <title>do not know &ndash; pyqt的安装(linux下)</title>
@@ -35,22 +36,17 @@
 <body>
   <aside>
     <div>
-      <a href="http://lmatt-bit.github.io/blog">
-        <img src="http://lmatt-bit.github.io/blog/theme/img/profile.png" alt="" title="">
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
       </a>
-      <h1><a href="http://lmatt-bit.github.io/blog"></a></h1>
+      <h1><a href=""></a></h1>
       <p></p>
       <nav>
         <ul class="list">
-          <li><a href="http://lmatt-bit.github.io/blog/pages/guanyuwo(About-Me).html#guanyuwo(About-Me)">关于我(About Me)</a></li>
-          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="/pages/guanyuwo(About-Me).html#guanyuwo(About-Me)">关于我(About Me)</a></li>
         </ul>
       </nav>
       <ul class="social">
-        <li><a class="sc-social link" href="#" target="_blank"><i class="fa fa-social link"></i></a></li>
-        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -59,7 +55,7 @@
 <article>
   <header>
     <h1 id="pyqtdeanzhuang(linuxxia)">pyqt的安装(linux下)</h1>
-    <p>Posted on Sun 18 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a></p>
+    <p>Posted on Sun 18 April 2010 in <a href="/category/misc.html">misc</a></p>
   </header>
   <div>
     <p>nokia在收购qt之后，让qt出现了lgpl的licence，这一举动获得了不少赞许。nokia也希望pyqt能有lgpl的licence，只可惜与Riverbank谈判不拢，pyqt依旧是gpl的licence。迫不得已，nokia只好自己搞个类似pyqt的项目（pyside）。这个pyside项目的协议是lgpl的，目前还不够完善，但相信以后的前景是不错的。</p>
@@ -123,10 +119,10 @@ QtGui和QtCore时，需要先引入QtGui。这个问题导致许多pyqt程序无
   "author": {
     "@type": "Person",
     "name": "lmatt wang",
-    "url": "http://lmatt-bit.github.io/blog/author/lmatt-wang.html"
+    "url": "/author/lmatt-wang.html"
   },
   "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
-  "url": "http://lmatt-bit.github.io/blog/pyqtdeanzhuang(linuxxia).html",
+  "url": "/pyqtdeanzhuang(linuxxia).html",
   "description": "nokia在收购qt之后，让qt出现了lgpl的licence，这一举动获得了不少赞许。nokia也希望pyqt能有lgpl的licence，只可惜与Riverbank谈判不拢，pyqt依旧是gpl的licence。迫不得已，nokia只好自己搞个类似pyqt的项目（pyside）。这个pyside项目的协议是lgpl的，目前还不够完善，但相信以后的前景是不错的。 目前pyqt仍然是主流，所以下面说一下pyqt的安装。由于windows有安装的exe，几乎不用配置就可以安装上，这里就不做说明。 要在linux下安装pyqt，首先需要安装Riverbank的SIP。在SIP安装前需要确保系统上安装了python-devel（python 开发的一些文件，在fedora下可以直接yum安装）。 安装SIP过程： 1.下载SIP，解压。 2.从命令行中进入SIP的目录，输入python configure.py 3.在上一步成功之后，输入make（需要确保有make，gcc等一系列编译工具） 4.在上一步成功之后，输入make install。到此sip安装完成。 接着是pyqt的安装： 1.下载pyqt，解压 ..."
 }
 </script></body>
