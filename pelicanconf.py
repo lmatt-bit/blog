@@ -20,25 +20,30 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
+LINKS = (
+         #('Pelican', 'http://getpelican.com/'),
+         #('Python.org', 'http://python.org/'),
+         #('Jinja2', 'http://jinja.pocoo.org/'),
          )
 
 # Social widget
-SOCIAL = (('social link', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (#('social link', '#'),
+          #('Another social link', '#'),
+          )
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
-
+RELATIVE_URLS = True
 
 THEME = '../pelican-themes/Flex'
 
-PLUGIN_PATHS=['../pelican-plugins']
-PLUGINS=['disqus_static', 'pelican_gist']
+PLUGIN_PATHS=['../pelican-plugins', './plugins']
+#PLUGINS=['disqus_static', 'pelican_gist', 'liquid_tags.notebook']
+PLUGINS=['ipynb.markup']
+MARKUP = ('md', 'ipynb')
+
+#NOTEBOOK_DIR='notebooks'
 
 DISQUS_SITENAME='lmattbit'
 DISQUS_SECRET_KEY='rB2wbazGTv3QE7X7LjSQQOLIuvOSKzPfMCBw8LR7OQvckPQWrAPA6I0DKIPfRV51'
