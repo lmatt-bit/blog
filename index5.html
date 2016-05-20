@@ -48,6 +48,30 @@
 
 <article>
   <header>
+    <h2><a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">apache 配置http代理服务器</a></h2>
+    <p>
+      Posted on Tue 16 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
+      &#8226; <a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#disqus_thread">Leave a comment</a>
+    </p>
+  </header>
+  <div>
+      <p>以opensuse11.2为例，在/etc/apache2/sysconfig.d/目录中的loadmodule.conf中添加如下内容。分别是载入cache,disk_cache,proxy和proxy_http模块。其中cache和disk_cache用于缓存信息，proxy和proxy_http（用于支持http）用于启用代理。</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre><span></span>LoadModule cache_module /usr/lib/apache2-prefork/mod_cache.so
+LoadModule disk_cache_module /usr/lib/apache2-prefork/mod_disk_cache.so
+LoadModule proxy_module /usr/lib/apache2-prefork/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>然后在/etc ...</p>
+      <a class="btn" href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">Continue reading</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://lmatt-bit.github.io/blog/c++-constdeyixiezhishi.html#c++-constdeyixiezhishi">c++ const的一些知识</a></h2>
     <p>
       Posted on Mon 15 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>

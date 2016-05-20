@@ -48,6 +48,48 @@
 
 <article>
   <header>
+    <h2><a href="http://lmatt-bit.github.io/blog/dangqianmuluhechengxusuozaimulu.html#dangqianmuluhechengxusuozaimulu">当前目录和程序所在目录</a></h2>
+    <p>
+      Posted on Wed 20 October 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
+      &#8226; <a href="http://lmatt-bit.github.io/blog/dangqianmuluhechengxusuozaimulu.html#disqus_thread">Leave a comment</a>
+    </p>
+  </header>
+  <div>
+      <p><strong>1.python</strong>\
+当前目录：</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+
+
+<p>程序所在目录：</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="c1">#os.path.split( os.path.realpath( sys.argv[0] ) )[0]</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+</pre></div>
+
+
+<p><strong>2.vc/mfc</strong>\
+当前目录:</p>
+<div class="highlight"><pre><span></span>TCHAR path[MAX_PATH];
+GetCurrentDirectory(path, MAX_PATH);
+</pre></div>
+
+
+<p>程序所在目录:</p>
+<div class="highlight"><pre><span></span>TCHAR path[MAX_PATH];
+GetModuleFileName(NULL, path, MAX_PATH);
+</pre></div>
+
+
+<p><strong>3.c/c++(linux)</strong>\
+当前目录 ...</p>
+      <a class="btn" href="http://lmatt-bit.github.io/blog/dangqianmuluhechengxusuozaimulu.html#dangqianmuluhechengxusuozaimulu">Continue reading</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://lmatt-bit.github.io/blog/quebaoFileOutputStreamjiangneirongxieruyingpan.html#quebaoFileOutputStreamjiangneirongxieruyingpan">确保FileOutputStream将内容写入硬盘</a></h2>
     <p>
       Posted on Thu 14 October 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
@@ -297,38 +339,6 @@ var等。这类似C语言中的#include，只是在使用module中的的内容�
 module中导入fun(方法)，cla(类)，mod_name(子模块)。在使用这些被导入的内容时，可以不用使用前缀（不同于第一行内容）。</p>
 <p>第四行是在python2 ...</p>
       <a class="btn" href="http://lmatt-bit.github.io/blog/pythonzhongdeimport.html#pythonzhongdeimport">Continue reading</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#web.pyzaicgixiadeinstall">web.py在cgi下的install</a></h2>
-    <p>
-      Posted on Mon 19 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#disqus_thread">Leave a comment</a>
-    </p>
-  </header>
-  <div>
-      <p>由于ixwebhosting下无法安装web.py之类的程序，只能将web.py当作工程的一部分。这需要将web.py下的web目录拷贝到工程目录中，以后只需要import
-web就可以使用web.py了。</p>
-<p>web.py可以和Lighttpd,Apache搭配使用。web.py的官网推荐的是使用lighttpd（fastcgi）。这里介绍的是Apache下的CGI方式（这种方式效率不高，不过在ixwebhosting下只能使用这种方式）。</p>
-<p>在.htaccess下添加如下代码：</p>
-<p>[codesyntax lang="apache"]</p>
-<div class="highlight"><pre><span></span>Options +ExecCGI
-AddHandler cgi-script .py
-</pre></div>
-
-
-<p>[/codesyntax]</p>
-<p>或者在http.conf（或apache2.conf）下添加如下代码：</p>
-<p>[codesyntax lang="apache"]</p>
-<div class="highlight"><pre><span></span>Alias /foo/static/ /path/to/static
-ScriptAlias /foo/ /path/to/code.py
-</pre></div>
-
-
-<p>[/codesyntax ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#web.pyzaicgixiadeinstall">Continue reading</a>
   </div>
 </article>
 

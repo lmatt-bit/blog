@@ -48,6 +48,38 @@
 
 <article>
   <header>
+    <h2><a href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#web.pyzaicgixiadeinstall">web.py在cgi下的install</a></h2>
+    <p>
+      Posted on Mon 19 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
+      &#8226; <a href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#disqus_thread">Leave a comment</a>
+    </p>
+  </header>
+  <div>
+      <p>由于ixwebhosting下无法安装web.py之类的程序，只能将web.py当作工程的一部分。这需要将web.py下的web目录拷贝到工程目录中，以后只需要import
+web就可以使用web.py了。</p>
+<p>web.py可以和Lighttpd,Apache搭配使用。web.py的官网推荐的是使用lighttpd（fastcgi）。这里介绍的是Apache下的CGI方式（这种方式效率不高，不过在ixwebhosting下只能使用这种方式）。</p>
+<p>在.htaccess下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre><span></span>Options +ExecCGI
+AddHandler cgi-script .py
+</pre></div>
+
+
+<p>[/codesyntax]</p>
+<p>或者在http.conf（或apache2.conf）下添加如下代码：</p>
+<p>[codesyntax lang="apache"]</p>
+<div class="highlight"><pre><span></span>Alias /foo/static/ /path/to/static
+ScriptAlias /foo/ /path/to/code.py
+</pre></div>
+
+
+<p>[/codesyntax ...</p>
+      <a class="btn" href="http://lmatt-bit.github.io/blog/web.pyzaicgixiadeinstall.html#web.pyzaicgixiadeinstall">Continue reading</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://lmatt-bit.github.io/blog/apache-url-rewrite.html#apache-url-rewrite">apache url rewrite</a></h2>
     <p>
       Posted on Mon 19 April 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
@@ -279,30 +311,6 @@ C++语言完全兼容的情况下,给出主机或操作系统专有的特征。�
 macro
 activated!”。我们就不会因为不记得自己定义的一些特定的宏而抓耳挠腮了 ...</p>
       <a class="btn" href="http://lmatt-bit.github.io/blog/pragmazhuanzaizibaidubaike.html#pragmazhuanzaizibaidubaike">Continue reading</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">apache 配置http代理服务器</a></h2>
-    <p>
-      Posted on Tue 16 March 2010 in <a href="http://lmatt-bit.github.io/blog/category/misc.html">misc</a>
-      &#8226; <a href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#disqus_thread">Leave a comment</a>
-    </p>
-  </header>
-  <div>
-      <p>以opensuse11.2为例，在/etc/apache2/sysconfig.d/目录中的loadmodule.conf中添加如下内容。分别是载入cache,disk_cache,proxy和proxy_http模块。其中cache和disk_cache用于缓存信息，proxy和proxy_http（用于支持http）用于启用代理。</p>
-<p>[codesyntax lang="apache"]</p>
-<div class="highlight"><pre><span></span>LoadModule cache_module /usr/lib/apache2-prefork/mod_cache.so
-LoadModule disk_cache_module /usr/lib/apache2-prefork/mod_disk_cache.so
-LoadModule proxy_module /usr/lib/apache2-prefork/mod_proxy.so
-LoadModule proxy_http_module /usr/lib/apache2-prefork/mod_proxy_http.so
-</pre></div>
-
-
-<p>[/codesyntax]</p>
-<p>然后在/etc ...</p>
-      <a class="btn" href="http://lmatt-bit.github.io/blog/apache-peizhihttpdailifuwuqi.html#apache-peizhihttpdailifuwuqi">Continue reading</a>
   </div>
 </article>
 
